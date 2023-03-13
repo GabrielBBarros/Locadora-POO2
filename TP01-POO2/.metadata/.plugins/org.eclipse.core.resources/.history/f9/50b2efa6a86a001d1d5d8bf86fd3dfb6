@@ -1,0 +1,19 @@
+package seguro;
+
+import java.time.LocalDate;
+
+public class Registro {
+	private Pagamento pagamento;
+	private LocalDate dataPagamento;
+	
+	
+	public Registro() {
+		
+	}
+	
+	public Registro(Pagamento pagamento, LocalDate dataPagamento) {
+		this.pagamento = pagamento;
+		this.dataPagamento = dataPagamento;
+	}
+	
+}

@@ -1,0 +1,20 @@
+
+|
+java:S3252""LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İHëİRCRITICALZ
+CODE_SMELL
+i
+java:S22092"5Change this instance-reference to a static reference.(ğ£ûÊ8Íõ³¦Ë0HíİRMAJORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(øÈ½¼ûÿÿÿÿHêİRMINORZ
+CODE_SMELL
+„	java:S117S"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜Ç†Ş8ñûÖ°Ê0HóİRMINORZ
+CODE_SMELL
+\
+java:S30102"(Remove this assignment of "controlador".(ğ£ûÊ8§ÅªüÊ0HğİRMAJORZ
+CODE_SMELL
+‰
+java:S1450"URemove the "coluna" field and declare it as a local variable in the relevant methods.(¬¨´¨8ñûÖ°Ê0HòİRMINORZ
+CODE_SMELL
+
+java:S1450"TRemove the "linha" field and declare it as a local variable in the relevant methods.(¡ùèòşÿÿÿÿ8ñûÖ°Ê0HïİRMINORZ
+CODE_SMELL

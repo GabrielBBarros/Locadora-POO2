@@ -1,0 +1,40 @@
+
+†	java:S116""SRename this field "ValorTXT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ¿Ø„8 ë©ƒÌ0H˜§RMINORZ
+CODE_SMELL
+ƒ
+java:S3252+"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İ8 ë©ƒÌ0H«§RCRITICALZ
+CODE_SMELL
+]
+java:S1604"(Make this anonymous inner class a lambda(°´Ë£8ÆÕ«ƒÌ0H‘§RMAJORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.( Ö“ıÿÿÿÿHª§RMINORZ
+CODE_SMELL
+’	java:S116"ZRename this field "Cod_CorretorTXT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üáëãÿÿÿÿÿ8 ë©ƒÌ0HŸ§RMINORZ
+CODE_SMELL
+n
+java:S2209="5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8 ë©ƒÌ0H”§RMAJORZ
+CODE_SMELL
+Œ	java:S116"YRename this field "Cod_ClienteTXT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹¢Ô»8 ë©ƒÌ0H¡§RMINORZ
+CODE_SMELL
+n
+java:S2209="5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8 ë©ƒÌ0H¢§RMAJORZ
+CODE_SMELL
+‹	java:S116!"XRename this field "Cod_ImovelTXT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š‘ô˜8 ë©ƒÌ0H §RMINORZ
+CODE_SMELL
+]
+java:S3010="$Remove this assignment of "control".(šä™Âøÿÿÿÿ8 ë©ƒÌ0Hœ§RMAJORZ
+CODE_SMELL
+‚
+java:S1192I"FDefine a constant instead of duplicating this literal "Serif" 6 times.(˜ê®Óıÿÿÿÿ8 ë©ƒÌ0H¤§RCRITICALZ
+CODE_SMELL
+]	java:S108")Either remove or fill this block of code.(Á¡ÆÃ8¹æ„Ì0HÏ®RMAJORZ
+CODE_SMELL
+i
+java:S1128"0Remove this unused import 'java.awt.FlowLayout'.(Íğç¢ÿÿÿÿÿ8øÛ¡„Ì0Hó¸RMINORZ
+CODE_SMELL
+q
+java:S1128"8Remove this unused import 'java.awt.event.MouseAdapter'.( ÜÍÁûÿÿÿÿ8øÛ¡„Ì0Hõ¸RMINORZ
+CODE_SMELL
+j
+java:S1128"6Remove this unused import 'java.awt.event.MouseEvent'.(›õ8øÛ¡„Ì0H÷¸RMINORZ
+CODE_SMELL

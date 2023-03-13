@@ -1,0 +1,190 @@
+
+_
+java:S5411È	"*Use the primitive boolean expression here.(ÓïåŸ8¿©Ÿ„Ì0HÉÇRMINORZ
+CODE_SMELL
+
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 71 to the 15 allowed.(³ÊÍëÿÿÿÿÿ8Ê†ûË0HÌÇRCRITICALZ
+CODE_SMELL
+b
+java:S1604İ"(Make this anonymous inner class a lambda(Å¯¼Êüÿÿÿÿ8¿©Ÿ„Ì0HıÇRMAJORZ
+CODE_SMELL
+b
+java:S1604å
+"(Make this anonymous inner class a lambda(¬äèìıÿÿÿÿ8×¹£„Ì0HşÇRMAJORZ
+CODE_SMELL
+_
+java:S5411ú"*Use the primitive boolean expression here.(«ÊËŠ8¿©Ÿ„Ì0HÿÇRMINORZ
+CODE_SMELL
+]
+java:S1604ş"(Make this anonymous inner class a lambda(Ôàù8¿©Ÿ„Ì0H‚ÈRMAJORZ
+CODE_SMELL
+b
+java:S1604›
+"(Make this anonymous inner class a lambda(ñÔó¥ûÿÿÿÿ8¿©Ÿ„Ì0HƒÈRMAJORZ
+CODE_SMELL
+]
+java:S1604˜"(Make this anonymous inner class a lambda(ù³Àƒ8¿©Ÿ„Ì0H„ÈRMAJORZ
+CODE_SMELL
+g
+java:S1199î"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8Ö©³Ê0H…ÈRMINORZ
+CODE_SMELL
+_
+java:S5411’
+"*Use the primitive boolean expression here.(¾ì±‹8¿©Ÿ„Ì0H†ÈRMINORZ
+CODE_SMELL
+b
+java:S1604À"(Make this anonymous inner class a lambda(Á´ë†üÿÿÿÿ8¿©Ÿ„Ì0H‰ÈRMAJORZ
+CODE_SMELL
+b
+java:S1604†	"(Make this anonymous inner class a lambda(ô¯¼ûÿÿÿÿ8¿©Ÿ„Ì0HŠÈRMAJORZ
+CODE_SMELL
+b
+java:S1604ä"(Make this anonymous inner class a lambda(ÌŞùÿÿÿÿ8¿©Ÿ„Ì0H‹ÈRMAJORZ
+CODE_SMELL
+b
+java:S1604‚"(Make this anonymous inner class a lambda(¯ôÖıÿÿÿÿ8¿©Ÿ„Ì0HŒÈRMAJORZ
+CODE_SMELL
+b
+java:S1604õ	"(Make this anonymous inner class a lambda(­’ß«ûÿÿÿÿ8¿©Ÿ„Ì0HÈRMAJORZ
+CODE_SMELL
+b
+java:S1604À
+"(Make this anonymous inner class a lambda(ŠèÅûÿÿÿÿ8¿©Ÿ„Ì0HÈRMAJORZ
+CODE_SMELL
+b
+java:S1604í"(Make this anonymous inner class a lambda(–ŒŸÁùÿÿÿÿ8¿©Ÿ„Ì0HÈRMAJORZ
+CODE_SMELL
+Š	java:S117ö"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÄªµøÿÿÿÿ8ÃİãµÊ0HÈRMINORZ
+CODE_SMELL
+b
+java:S1604È"(Make this anonymous inner class a lambda(şŞ¢³úÿÿÿÿ8¿©Ÿ„Ì0H‘ÈRMAJORZ
+CODE_SMELL
+b
+java:S1604¸"(Make this anonymous inner class a lambda(ë„©èùÿÿÿÿ8¿©Ÿ„Ì0H’ÈRMAJORZ
+CODE_SMELL
+_
+java:S5411Ÿ"*Use the primitive boolean expression here.(ÍÑ¶È8¿©Ÿ„Ì0H“ÈRMINORZ
+CODE_SMELL
+d
+java:S5411Ù"*Use the primitive boolean expression here.(àåş¨şÿÿÿÿ8¿©Ÿ„Ì0H–ÈRMINORZ
+CODE_SMELL
+]
+java:S1604«"(Make this anonymous inner class a lambda(ˆœ§Œ8¿©Ÿ„Ì0H™ÈRMAJORZ
+CODE_SMELL
+]
+java:S1604…"(Make this anonymous inner class a lambda(¬‹î8¿©Ÿ„Ì0HšÈRMAJORZ
+CODE_SMELL
+_
+java:S5411¸
+"*Use the primitive boolean expression here.(¸Êı–8¿©Ÿ„Ì0H›ÈRMINORZ
+CODE_SMELL
+_
+java:S5411İ
+"*Use the primitive boolean expression here.(×ÊÄ8¿©Ÿ„Ì0HÈRMINORZ
+CODE_SMELL
+|
+java:S3252#"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İH¡ÈRCRITICALZ
+CODE_SMELL
+a	java:S108G")Either remove or fill this block of code.(¡»¢üùÿÿÿÿ8ï§­şË0H£ÈRMAJORZ
+CODE_SMELL
+a
+java:S1125ô"'Remove the unnecessary boolean literal.(ôï şúÿÿÿÿ8¿©Ÿ„Ì0H¤ÈRMINORZ
+CODE_SMELL
+]
+java:S1604Í"(Make this anonymous inner class a lambda(³ü·ì8¿©Ÿ„Ì0H¦ÈRMAJORZ
+CODE_SMELL
+d
+java:S5411£	"*Use the primitive boolean expression here.(åıìùÿÿÿÿ8¿©Ÿ„Ì0H§ÈRMINORZ
+CODE_SMELL
+_
+java:S5411í	"*Use the primitive boolean expression here.(ıÙ£¾8¿©Ÿ„Ì0HªÈRMINORZ
+CODE_SMELL
+]
+java:S1604«	"(Make this anonymous inner class a lambda(‘£çì8¿©Ÿ„Ì0H­ÈRMAJORZ
+CODE_SMELL
+d
+java:S5411ş"*Use the primitive boolean expression here.(åèöšşÿÿÿÿ8¿©Ÿ„Ì0H®ÈRMINORZ
+CODE_SMELL
+]
+java:S1604£"(Make this anonymous inner class a lambda(İ³°ı8¿©Ÿ„Ì0H±ÈRMAJORZ
+CODE_SMELL
+d
+java:S5411"*Use the primitive boolean expression here.(õœÅßúÿÿÿÿ8¿©Ÿ„Ì0H²ÈRMINORZ
+CODE_SMELL
+]
+java:S1604Ğ	"(Make this anonymous inner class a lambda( Àåï8¿©Ÿ„Ì0HµÈRMAJORZ
+CODE_SMELL
+]
+java:S1604÷"(Make this anonymous inner class a lambda(üØù8¿©Ÿ„Ì0H¶ÈRMAJORZ
+CODE_SMELL
+d
+java:S5411§"*Use the primitive boolean expression here.(®¾·…úÿÿÿÿ8¿©Ÿ„Ì0H·ÈRMINORZ
+CODE_SMELL
+\	java:S108I")Either remove or fill this block of code.(”ı¾8 Ä«şË0HºÈRMAJORZ
+CODE_SMELL
+W
+java:S30107"$Remove this assignment of "control".(úØë@8£ö»¢Ë0H»ÈRMAJORZ
+CODE_SMELL
+_
+java:S5411å"*Use the primitive boolean expression here.(¡Á­€8¿©Ÿ„Ì0H½ÈRMINORZ
+CODE_SMELL
+d
+java:S5411À"*Use the primitive boolean expression here.(Şëñşøÿÿÿÿ8¿©Ÿ„Ì0HÀÈRMINORZ
+CODE_SMELL
+_
+java:S5411Š"*Use the primitive boolean expression here.(Ï¨‡Œ8¿©Ÿ„Ì0HÃÈRMINORZ
+CODE_SMELL
+_
+java:S5411‚"*Use the primitive boolean expression here.(°î°š8¿©Ÿ„Ì0HÆÈRMINORZ
+CODE_SMELL
+]
+java:S1604—"(Make this anonymous inner class a lambda(™ØŒü8¿©Ÿ„Ì0HÉÈRMAJORZ
+CODE_SMELL
+d
+java:S5411Ä"*Use the primitive boolean expression here.(İĞÁ²úÿÿÿÿ8¿©Ÿ„Ì0HÊÈRMINORZ
+CODE_SMELL
+]
+java:S1604×"(Make this anonymous inner class a lambda(¦‘Å8¿©Ÿ„Ì0HÍÈRMAJORZ
+CODE_SMELL
+]
+java:S1604Š"(Make this anonymous inner class a lambda(›ë8¿©Ÿ„Ì0HÎÈRMAJORZ
+CODE_SMELL
+^
+java:S5411¯"*Use the primitive boolean expression here.(ÜÔ¹]8¿©Ÿ„Ì0HÏÈRMINORZ
+CODE_SMELL
+d
+java:S5411ô"*Use the primitive boolean expression here.(ôï şúÿÿÿÿ8¿©Ÿ„Ì0HÒÈRMINORZ
+CODE_SMELL
+]
+java:S1604Ñ"(Make this anonymous inner class a lambda(Ø•¸­8¿©Ÿ„Ì0HÕÈRMAJORZ
+CODE_SMELL
+b
+java:S1604¼"(Make this anonymous inner class a lambda(²‘ƒÖşÿÿÿÿ8¿©Ÿ„Ì0HÖÈRMAJORZ
+CODE_SMELL
+d
+java:S5411Õ"*Use the primitive boolean expression here.(¡ó¼…úÿÿÿÿ8¿©Ÿ„Ì0H×ÈRMINORZ
+CODE_SMELL
+d
+java:S5411›"*Use the primitive boolean expression here.(æòÎ©ûÿÿÿÿ8¿©Ÿ„Ì0HÚÈRMINORZ
+CODE_SMELL
+b
+java:S1604§"(Make this anonymous inner class a lambda(›ïÁµüÿÿÿÿ8¿©Ÿ„Ì0HİÈRMAJORZ
+CODE_SMELL
+_
+java:S5411ê"*Use the primitive boolean expression here.(¥÷³8¿©Ÿ„Ì0HŞÈRMINORZ
+CODE_SMELL
+b
+java:S1604á"(Make this anonymous inner class a lambda(åÈòøÿÿÿÿ8¿©Ÿ„Ì0HáÈRMAJORZ
+CODE_SMELL
+b
+java:S1604ò"(Make this anonymous inner class a lambda(õò³òÿÿÿÿÿ8¿©Ÿ„Ì0HâÈRMAJORZ
+CODE_SMELL
+d
+java:S5411´"*Use the primitive boolean expression here.(òœöÆøÿÿÿÿ8¿©Ÿ„Ì0HãÈRMINORZ
+CODE_SMELL
+b
+java:S1604’"(Make this anonymous inner class a lambda(–§àõúÿÿÿÿ8¿©Ÿ„Ì0HæÈRMAJORZ
+CODE_SMELL
+]
+java:S1604¾"(Make this anonymous inner class a lambda(Ù‰ß¥8¿©Ÿ„Ì0HçÈRMAJORZ
+CODE_SMELL

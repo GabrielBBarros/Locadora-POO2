@@ -1,0 +1,22 @@
+package seguro;
+
+import java.io.*;
+
+public class Dinheiro extends Pagamento implements Serializable  {
+
+	Dinheiro() {
+		
+	}
+
+	public Dinheiro(String tipoPagamento) {
+		super(tipoPagamento);
+		
+	}
+
+	@Override
+	public String toString() {
+		return "Pagamento [tipoPagamento=" + tipoPagamento + "]";
+	}
+
+
+}

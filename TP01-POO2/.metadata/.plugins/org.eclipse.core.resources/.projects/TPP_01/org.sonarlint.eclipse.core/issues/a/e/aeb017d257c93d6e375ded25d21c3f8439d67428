@@ -1,0 +1,80 @@
+
+e
+java:S1481",Remove this unused "imoveis" local variable.(Ë•«ëüÿÿÿÿ8îÂÏøË0H±íRMINORZ
+CODE_SMELL
+ƒ
+java:S2095+"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8ŸÄ§÷Ë0H²íRBLOCKERZBUG
+\	java:S108M")Either remove or fill this block of code.(”ı¾8×Ó‘ÿË0H³íRMAJORZ
+CODE_SMELL
+ƒ
+java:S2095%"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8ŒıööË0H´íRBLOCKERZBUG
+„
+java:S2095I"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8×Ó‘ÿË0HµíRBLOCKERZBUG
+b
+java:S1481")Remove this unused "data" local variable.(ÅèÙ½ÿÿÿÿÿ8îÂÏøË0H¶íRMINORZ
+CODE_SMELL
+u
+java:S1854>"<Remove this useless assignment to local variable "alugueis".(ù´ãÚÿÿÿÿÿ8îÂÏøË0H¸íRMAJORZ
+CODE_SMELL
+
+java:S20956"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¼³ìşÿÿÿÿ8‚ŸøË0H¹íRBLOCKERZBUG
+{
+java:S2095<"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(×™¦f8úÖÃøË0HºíRBLOCKERZBUG
+ƒ
+java:S20957"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8‚ŸøË0H»íRBLOCKERZBUG
+p
+java:S1854"7Remove this useless assignment to local variable "str".(»”œÑüÿÿÿÿ8–ä‚÷Ë0H¼íRMAJORZ
+CODE_SMELL
+}
+java:S2095H"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ö³¤8×Ó‘ÿË0H½íRBLOCKERZBUG
+ƒ
+java:S20951"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8æ´øË0H¾íRBLOCKERZBUG
+f
+java:S1481"-Remove this unused "alugueis" local variable.(•‘İ²şÿÿÿÿ8îÂÏøË0H¿íRMINORZ
+CODE_SMELL
+^
+java:S1481"+Remove this unused "vendas" local variable.(×ê¹Z8›Ï„øË0HÀíRMINORZ
+CODE_SMELL
+w
+java:S1854&">Remove this useless assignment to local variable "corretores".(Ë­çÉşÿÿÿÿ8îÂÏøË0HÁíRMAJORZ
+CODE_SMELL
+~
+java:S2095"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(¢Ë¿Ÿ8ÆÖˆöË0HÂíRBLOCKERZBUG
+`
+java:S1481",Remove this unused "seguros" local variable.(úİ‰Ê8öáŸøË0HÃíRMINORZ
+CODE_SMELL
+y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÿèê´HÄíRMINORZ
+CODE_SMELL
+ƒ
+java:S2095="OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8úÖÃøË0HÅíRBLOCKERZBUG
+o
+java:S18548";Remove this useless assignment to local variable "seguros".(ò˜œ8öáŸøË0HÆíRMAJORZ
+CODE_SMELL
+a	java:S108B")Either remove or fill this block of code.(Üã¾Çûÿÿÿÿ8êºöË0HÇíRMAJORZ
+CODE_SMELL
+u
+java:S1854"<Remove this useless assignment to local variable "cadastro".(Æ£´ƒùÿÿÿÿ8îÂÏøË0HÈíRMAJORZ
+CODE_SMELL
+t
+java:S1854,";Remove this useless assignment to local variable "imoveis".(Ÿ«•çüÿÿÿÿ8îÂÏøË0HÉíRMAJORZ
+CODE_SMELL
+f
+java:S1481"-Remove this unused "cadastro" local variable.(Æ£´ƒùÿÿÿÿ8îÂÏøË0HÊíRMINORZ
+CODE_SMELL
+|
+java:S2095$"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(®ù¢8ŸÄ§÷Ë0HÌíRBLOCKERZBUG
+|
+java:S20950"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(„Şßƒ8ˆÇø÷Ë0HÍíRBLOCKERZBUG
+a
+java:S1481"(Remove this unused "str" local variable.(»”œÑüÿÿÿÿ8–ä‚÷Ë0HÎíRMINORZ
+CODE_SMELL
+c
+java:S1481"/Remove this unused "corretores" local variable.(şœ×Í8îÂÏøË0HĞíRMINORZ
+CODE_SMELL
+
+java:S2095*"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¦×á›ÿÿÿÿÿ8ŒıööË0HÑíRBLOCKERZBUG
+s
+java:S18542":Remove this useless assignment to local variable "vendas".(ìß¹®ûÿÿÿÿ8›Ï„øË0HÒíRMAJORZ
+CODE_SMELL
+
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ì’ÿÿÿÿÿÿ8ÆÖˆöË0HÓíRBLOCKERZBUG

@@ -1,0 +1,21 @@
+
+t
+java:S1161´":Add the "@Override" annotation above this method signature(Ä Ïúüÿÿÿÿ8š«Œ¥Ë0HäRMAJORZ
+CODE_SMELL
+n
+java:S22099"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8éğµ¤Ë0HšäRMAJORZ
+CODE_SMELL
+d
+java:S1068"+Remove this unused "control" private field.(‡îÍÿüÿÿÿÿ8·ÁÀ¤Ë0H–äRMAJORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ï¡íÀøÿÿÿÿHœäRMINORZ
+CODE_SMELL
+]
+java:S30109"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8éğµ¤Ë0H’äRMAJORZ
+CODE_SMELL
+n
+java:S22099"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8éğµ¤Ë0H˜äRMAJORZ
+CODE_SMELL
+|
+java:S3252*"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İH”äRCRITICALZ
+CODE_SMELL

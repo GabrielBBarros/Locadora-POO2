@@ -1,0 +1,175 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Cliente extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField textFieldNomeCLI;
+	private JTextField textFieldCPFCLI;
+	private JTextField textFieldRGCLI;
+	private JTextField textFieldDatadeNascimentoCLI;
+	private JTextField textFieldEnderecoCLI;
+	private JTextField textFieldCEPCLI;
+	private JTextField textFieldTelefoneCLI;
+	private JTextField textFieldEmailCLI;
+	private JTextField textFieldDatadeCadastroCLI;
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Cliente dialog = new Cliente();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Cliente() {
+		setBounds(100, 100, 800, 600);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(0, 128, 128));
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		JLabel lblNome = new JLabel("Nome");
+		lblNome.setForeground(Color.WHITE);
+		lblNome.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblNome.setBounds(57, 122, 149, 21);
+		contentPanel.add(lblNome);
+		
+		JLabel lblCPF = new JLabel("CPF");
+		lblCPF.setForeground(Color.WHITE);
+		lblCPF.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblCPF.setBounds(57, 153, 149, 21);
+		contentPanel.add(lblCPF);
+		
+		JLabel lblRG = new JLabel("RG");
+		lblRG.setForeground(Color.WHITE);
+		lblRG.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblRG.setBounds(57, 183, 149, 21);
+		contentPanel.add(lblRG);
+		
+		JLabel lblDatadeNascimento = new JLabel("Data de nascimento");
+		lblDatadeNascimento.setForeground(Color.WHITE);
+		lblDatadeNascimento.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblDatadeNascimento.setBounds(57, 214, 184, 21);
+		contentPanel.add(lblDatadeNascimento);
+		
+		JLabel lblEndereco = new JLabel("Endereco");
+		lblEndereco.setForeground(Color.WHITE);
+		lblEndereco.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblEndereco.setBounds(57, 245, 149, 21);
+		contentPanel.add(lblEndereco);
+		
+		JLabel lblCEP = new JLabel("CEP");
+		lblCEP.setForeground(Color.WHITE);
+		lblCEP.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblCEP.setBounds(57, 276, 149, 21);
+		contentPanel.add(lblCEP);
+		
+		JLabel lblTelefone = new JLabel("Telefone");
+		lblTelefone.setForeground(Color.WHITE);
+		lblTelefone.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblTelefone.setBounds(57, 307, 149, 21);
+		contentPanel.add(lblTelefone);
+		
+		JLabel lblEmail = new JLabel("E-mail");
+		lblEmail.setForeground(Color.WHITE);
+		lblEmail.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblEmail.setBounds(57, 338, 149, 21);
+		contentPanel.add(lblEmail);
+		
+		JLabel lblDataDeCadastro = new JLabel("Data de Cadastro");
+		lblDataDeCadastro.setForeground(Color.WHITE);
+		lblDataDeCadastro.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblDataDeCadastro.setBounds(57, 369, 184, 21);
+		contentPanel.add(lblDataDeCadastro);
+		
+		textFieldNomeCLI = new JTextField();
+		textFieldNomeCLI.setColumns(10);
+		textFieldNomeCLI.setBounds(266, 125, 401, 19);
+		contentPanel.add(textFieldNomeCLI);
+		
+		textFieldCPFCLI = new JTextField();
+		textFieldCPFCLI.setColumns(10);
+		textFieldCPFCLI.setBounds(266, 156, 401, 19);
+		contentPanel.add(textFieldCPFCLI);
+		
+		textFieldRGCLI = new JTextField();
+		textFieldRGCLI.setColumns(10);
+		textFieldRGCLI.setBounds(266, 186, 401, 19);
+		contentPanel.add(textFieldRGCLI);
+		
+		textFieldDatadeNascimentoCLI = new JTextField();
+		textFieldDatadeNascimentoCLI.setColumns(10);
+		textFieldDatadeNascimentoCLI.setBounds(266, 217, 401, 19);
+		contentPanel.add(textFieldDatadeNascimentoCLI);
+		
+		textFieldEnderecoCLI = new JTextField();
+		textFieldEnderecoCLI.setColumns(10);
+		textFieldEnderecoCLI.setBounds(266, 248, 401, 19);
+		contentPanel.add(textFieldEnderecoCLI);
+		
+		textFieldCEPCLI = new JTextField();
+		textFieldCEPCLI.setColumns(10);
+		textFieldCEPCLI.setBounds(266, 279, 401, 19);
+		contentPanel.add(textFieldCEPCLI);
+		
+		textFieldTelefoneCLI = new JTextField();
+		textFieldTelefoneCLI.setColumns(10);
+		textFieldTelefoneCLI.setBounds(266, 310, 401, 19);
+		contentPanel.add(textFieldTelefoneCLI);
+		
+		textFieldEmailCLI = new JTextField();
+		textFieldEmailCLI.setColumns(10);
+		textFieldEmailCLI.setBounds(266, 341, 401, 19);
+		contentPanel.add(textFieldEmailCLI);
+		
+		textFieldDatadeCadastroCLI = new JTextField();
+		textFieldDatadeCadastroCLI.setColumns(10);
+		textFieldDatadeCadastroCLI.setBounds(266, 372, 401, 19);
+		contentPanel.add(textFieldDatadeCadastroCLI);
+		
+		JLabel lblCleinte = new JLabel("Cliente");
+		lblCleinte.setForeground(Color.WHITE);
+		lblCleinte.setFont(new Font("Monospaced", Font.BOLD, 40));
+		lblCleinte.setBounds(277, 0, 313, 79);
+		contentPanel.add(lblCleinte);
+		
+		JButton btnCadastrarClienteCLI = new JButton("Cadastrar");
+		btnCadastrarClienteCLI.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnCadastrarClienteCLI.setFont(new Font("Monospaced", Font.BOLD, 18));
+		btnCadastrarClienteCLI.setBounds(289, 487, 163, 44);
+		contentPanel.add(btnCadastrarClienteCLI);
+		
+		JButton btnVoltarUsuario = new JButton("Voltar");
+		btnVoltarUsuario.setFont(new Font("Monospaced", Font.BOLD, 18));
+		btnVoltarUsuario.setBounds(633, 493, 121, 33);
+		contentPanel.add(btnVoltarUsuario);
+	}
+
+}

@@ -1,0 +1,29 @@
+
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(§Èş„ùÿÿÿÿH­íRMINORZ
+CODE_SMELL
+‚
+java:S1450$"URemove the "coluna" field and declare it as a local variable in the relevant methods.(¬¨´¨HªíRMINORZ
+CODE_SMELL
+]
+java:S1604é"(Make this anonymous inner class a lambda(ÄüãÑ8Çì÷ûË0H©íRMAJORZ
+CODE_SMELL
+U
+java:S1604U"(Make this anonymous inner class a lambda(ÄüãÑH¨íRMAJORZ
+CODE_SMELL
+†
+java:S1450#"TRemove the "linha" field and declare it as a local variable in the relevant methods.(¡ùèòşÿÿÿÿH®íRMINORZ
+CODE_SMELL
+|
+java:S3252,"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İH«íRCRITICALZ
+CODE_SMELL
+i
+java:S2209<"5Change this instance-reference to a static reference.(ğ£ûÊ8ĞÚ†«Ë0H¯íRMAJORZ
+CODE_SMELL
+i
+java:S1128"0Remove this unused import 'java.awt.FlowLayout'.(Íğç¢ÿÿÿÿÿ8ô‡«Ë0H¦íRMINORZ
+CODE_SMELL
+Œ	java:S116&"[Rename this field "BuscarclienteTXT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(··æÃÿÿÿÿÿH¥íRMINORZ
+CODE_SMELL
+\
+java:S3010<"(Remove this assignment of "controlador".(ğ£ûÊ8ô‡«Ë0H£íRMAJORZ
+CODE_SMELL

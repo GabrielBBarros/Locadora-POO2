@@ -1,0 +1,57 @@
+package seguro;
+
+import java.io.*;
+
+public class Seguro implements Serializable  {
+	private String codigoSeguro;
+	private String nomeSeguradora;
+	private String tipo;
+	private String descricao;
+	private float valor;
+	
+	Seguro(String codigoSeguro, String nomeSeguradora, String tipo, String descricao, float valor) {
+		this.codigoSeguro = codigoSeguro;
+		this.nomeSeguradora = nomeSeguradora;
+		this.tipo = tipo;
+		this.descricao = descricao;
+		this.valor = valor;
+	}
+	
+	Seguro(){
+		
+	}
+	
+	public String getCodigoSeguro() {
+		return codigoSeguro;
+	}
+	public void setCodigoSeguro(String codigoSeguro) {
+		this.codigoSeguro = codigoSeguro;
+	}
+	public String getNomeSeguradora() {
+		return nomeSeguradora;
+	}
+	public void setNomeSeguradora(String nomeSeguradora) {
+		this.nomeSeguradora = nomeSeguradora;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public float getValor() {
+		return valor;
+	}
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
+	
+	
+}

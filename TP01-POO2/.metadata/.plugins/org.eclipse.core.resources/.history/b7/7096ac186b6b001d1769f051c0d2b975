@@ -1,0 +1,254 @@
+package controlador;
+
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import controle.*;
+import imovel.*;
+import seguro.*;
+import usuario.*;
+
+public final class Controlador {
+	
+	private static Controlador instanciaControlador = null;
+	private static Imobiliaria imobiliaria;
+	
+	private Controlador() {
+		imobiliaria = Imobiliaria.getInstancia();
+	}
+	
+	public static Controlador getInstancia() {
+		if(instanciaControlador == null) {
+			instanciaControlador = new Controlador();
+		}
+		return instanciaControlador;
+	}
+	
+	public void carregaArquivo() {
+		try {
+			imobiliaria.carregaArquivos();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean salvarAlugueis() {
+		try {
+			return imobiliaria.salvarAlugueis();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarClientes() {
+		try {
+			return imobiliaria.salvarClientes();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarImovel() {
+		try {
+			return imobiliaria.salvarImovel();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarVendas() {
+		try {
+			return imobiliaria.salvarVendas();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarCorretores() {
+		try {
+			return imobiliaria.salvarCorretores();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean buscaCliente(String codigo) {
+		return imobiliaria.buscaCliente(codigo);
+	}
+	
+	public boolean buscaCorretor(String codigo) {
+		return imobiliaria.buscaCorretor(codigo);
+	}
+	
+	public boolean buscaVenda(String codigo) {
+		return imobiliaria.buscaVenda(codigo);
+	}
+	
+	public boolean buscaResidencia(String codigo) {
+		return imobiliaria.buscaImovel(codigo);
+	}
+	
+	public boolean buscaAlugueis(String codigo) {
+		return imobiliaria.buscaAlugueis(codigo);
+	}
+	
+	public boolean buscaSeguro(String codigo) {
+		return imobiliaria.buscaSeguro(codigo);
+	}
+
+	public Usuario retornoCliente(String codigo) {
+		try {
+			return imobiliaria.retornoCliente(codigo);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Usuario retornoCorretor(String codigo) {
+		try {
+			return imobiliaria.retornoCorretor(codigo);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public Venda retornoVenda(String codigo) {
+		try {
+			return imobiliaria.retornoVenda(codigo);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public Imovel retornoCasaResidencial(String codigo) {
+		try {
+			return imobiliaria.retornoImovel(codigo);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public Aluguel retornoAlugueis(String codigo) {
+		try {
+			return imobiliaria.retornoAlugueis(codigo);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public Seguro retornoSeguro(String codigo) {
+		try {
+			return imobiliaria.retornoSeguro(codigo);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public boolean cadastroCliente(ArrayList<String> str, LocalDate datadenascimento, LocalDate dataCadastro) {
+		try {
+			return imobiliaria.cadastroCliente(str, datadenascimento, dataCadastro);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroCorretor(ArrayList<String> str, float salario, LocalDate datadenascimento, LocalDate dataCadastro) {
+		try {
+			return imobiliaria.cadastroCorretor(str, datadenascimento, salario, dataCadastro);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroCasaResidencial(String endereco, ArrayList<LocalDate> data, ArrayList<Float> fl, ArrayList<Integer> in) {
+		try {
+			return imobiliaria.cadastroResidencia(endereco, data, fl, in);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroApartamento(String endereco, ArrayList<LocalDate> data, ArrayList<Float> fl, ArrayList<Integer> in) {
+		try {
+			return imobiliaria.cadastroApartamento(endereco, data, fl, in);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroComercial(String endereco, ArrayList<LocalDate> data, ArrayList<Float> fl, ArrayList<Integer> in) {
+		try {
+			return imobiliaria.cadastroComercial(endereco, data, fl, in);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean cadastroVenda(Cliente cliente, Corretor corretor, Imovel imovel, LocalDate dataVenda,
+			float valorTotalVenda, Pagamento formaPagamento) {
+		try {
+			return imobiliaria.cadastroVenda(cliente, corretor, imovel, dataVenda, valorTotalVenda, formaPagamento);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroAluguel(Cliente cliente, Corretor corretor, Imovel imovel, LocalDate dataInicioAluguel,
+			LocalDate dataDevolucao, LocalDate dataPagamentoMensal) {
+		try {
+			return imobiliaria.cadastroAluguel(cliente, corretor, imovel, dataInicioAluguel, dataDevolucao, dataPagamentoMensal);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public int pagarAluguel(String codigoAluguel, ArrayList<String> str, float valor) {
+		return imobiliaria.pagarAluguel(codigoAluguel, str, valor);
+	}
+	
+	public ArrayList<Imovel> imoveisDispo(){
+		return imobiliaria.imoveisDispo();
+	}
+	
+	public ArrayList<Imovel> imoveisNaoDispo(){
+		return imobiliaria.imoveisNaoDispo();
+	}
+	
+	public ArrayList<Aluguel> getAlugueis(){
+		return imobiliaria.getAlugueis();
+	}
+	
+	public ArrayList<Imovel> imoveisAtrasados(){
+		return imobiliaria.imoveisAtrasados();
+	}
+	
+	public ArrayList<Imovel> imoveisAlugadosCliente(String codigo){
+		return imobiliaria.imoveisAlugadosCliente(codigo);
+	}
+	
+	
+	
+	
+	
+	public ArrayList<Venda> getVendas() {
+		return imobiliaria.getVendas();
+	}
+
+	public ArrayList<Imovel> getImoveis() {
+		return imobiliaria.getImoveis();
+	}
+
+	public ArrayList<Usuario> getClientes() {
+		return imobiliaria.getClientes();
+	}
+
+	public ArrayList<Usuario> getCorretores() {
+		return imobiliaria.getCorretores();
+	}
+
+	public ArrayList<Seguro> getSeguros() {
+		return imobiliaria.getSeguros();
+	}
+	
+}

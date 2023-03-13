@@ -1,0 +1,27 @@
+
+n
+java:S2209:"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8¬…Ð¨Ë0H‹öRMAJORZ
+CODE_SMELL
+d
+java:S1068"+Remove this unused "control" private field.(‡îÍÿüÿÿÿÿ8Œ¤Ì¨Ë0H‚öRMAJORZ
+CODE_SMELL
+y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(“½‚ÞH„öRMINORZ
+CODE_SMELL
+|
+java:S1192L"FDefine a constant instead of duplicating this literal "Serif" 3 times.(¡€¡Z8Ÿß€©Ë0HþõRCRITICALZ
+CODE_SMELL
+n
+java:S2209:"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8¬…Ð¨Ë0HöRMAJORZ
+CODE_SMELL
+|
+java:S3252+"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—ÝHöRCRITICALZ
+CODE_SMELL
+]
+java:S3010:"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8¬…Ð¨Ë0H…öRMAJORZ
+CODE_SMELL
+i
+java:S1128"0Remove this unused import 'java.awt.FlowLayout'.(Íðç¢ÿÿÿÿÿ8É¨Ù©Ë0H‰öRMINORZ
+CODE_SMELL
+d
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8É¨Ù©Ë0H‡öRMINORZ
+CODE_SMELL

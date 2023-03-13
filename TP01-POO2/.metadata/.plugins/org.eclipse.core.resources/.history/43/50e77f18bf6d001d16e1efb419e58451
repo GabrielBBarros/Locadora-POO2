@@ -1,0 +1,201 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+import controlador.Controlador;
+import imovel.Apartamento;
+import imovel.Comercial;
+import imovel.Imovel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+@SuppressWarnings("serial")
+public class Rel_Imoveis_aluguel_cliente extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+	private JTable tabela;
+	private String [][] dados;
+	private String [] titulos = {"Codigo", "Endereço", "D. Construção", "A. Total", "A. Construida","Quartos","Banheiros", "V. Garagem", "IPTU", "Venda", "Aluguel", "Andar", "Condominio", "T.I Federal"};
+	private int linha;
+	private int coluna;
+	private static Controlador controlador;
+	private final JLabel lblDigiteOCdigo = new JLabel("Digite o c\u00F3digo do cliente");
+	private final JTextField BuscarclienteTXT = new JTextField();
+	private final JButton btnBuscar = new JButton("Buscar");
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Rel_Imoveis_aluguel_cliente dialog = new Rel_Imoveis_aluguel_cliente();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Rel_Imoveis_aluguel_cliente() {
+		controlador = Controlador.getInstancia();
+		setBounds(100, 100, 900, 600);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(53, 78, 81));
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		contentPanel.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(5, 98, 876, 460);
+		contentPanel.add(scrollPane);
+		
+		
+		lblDigiteOCdigo.setForeground(Color.WHITE);
+		lblDigiteOCdigo.setFont(new Font("Serif", Font.BOLD, 15));
+		lblDigiteOCdigo.setBounds(25, 10, 866, 35);
+		
+		contentPanel.add(lblDigiteOCdigo);
+		BuscarclienteTXT.setColumns(10);
+		BuscarclienteTXT.setBounds(25, 40, 96, 19);
+		
+		contentPanel.add(BuscarclienteTXT);
+		btnBuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String codigo = BuscarclienteTXT.getText().trim();
+				setTamDadosImoveis(codigo);
+				setTabela(codigo);
+				
+				tabela = new JTable(dados, titulos);
+				scrollPane.setViewportView(tabela);
+			}
+		});
+		btnBuscar.setBounds(131, 39, 85, 21);
+		
+		contentPanel.add(btnBuscar);
+	}
+	
+	public void setTamDadosImoveis(String codigo) {
+		this.dados = new String[controlador.imoveisAlugadosCliente(codigo).size()][14];
+	}
+	
+	public void setTabela(String codigo) {
+		ArrayList<Imovel> imoveis = controlador.imoveisAlugadosCliente(codigo);
+		
+		this.linha = 0;
+		for(Imovel imo : imoveis) {
+			if(imo instanceof Apartamento) {
+				this.coluna = 0;
+				String codigoImovel = imo.getCodigoImovel();
+				String endereco = imo.getEndereco();
+				LocalDate dataConstrucao = imo.getDataConstrucao();
+				String dataCons = dataConstrucao.getDayOfMonth()+"/"+dataConstrucao.getMonthValue()+"/"+dataConstrucao.getYear();
+				String areaTotal = Float.toString(imo.getAreaTotal());
+				String areaConstruida = Float.toString(imo.getAreaConstruida());
+				String qtdDormitorios = Integer.toString(imo.getQtdDormitoriios());
+				String qtdBanheiros = Integer.toString(imo.getQtdBanheiros());
+				String qtdVagasGarragem = Integer.toString(imo.getQtdVagasGaragem());
+				String valorIPTU = Float.toString(imo.getValorIPTU());
+				String valorVenda = Float.toString(imo.getValorVenda());
+				String valorAluguel = Float.toString(imo.getValorAluguel());
+				String andar = Integer.toString(imo.getAndar());
+				String valorCondominio = Float.toString(imo.getValorCondominio());
+				
+				dados[this.linha][this.coluna] = codigoImovel; this.coluna++;
+				dados[this.linha][this.coluna] = endereco; this.coluna++;
+				dados[this.linha][this.coluna] = dataCons; this.coluna++;
+				dados[this.linha][this.coluna] = areaTotal; this.coluna++;
+				dados[this.linha][this.coluna] = areaConstruida; this.coluna++;
+				dados[this.linha][this.coluna] = qtdDormitorios; this.coluna++;
+				dados[this.linha][this.coluna] = qtdBanheiros; this.coluna++;
+				dados[this.linha][this.coluna] = qtdVagasGarragem; this.coluna++;
+				dados[this.linha][this.coluna] = valorIPTU; this.coluna++;
+				dados[this.linha][this.coluna] = valorVenda; this.coluna++;
+				dados[this.linha][this.coluna] = valorAluguel; this.coluna++;
+				dados[this.linha][this.coluna] = andar; this.coluna++;
+				dados[this.linha][this.coluna] = valorCondominio; this.coluna++;
+				dados[this.linha][this.coluna] = ""; this.coluna++;
+				this.linha++;
+			}
+			else if(imo instanceof Comercial) {
+				this.coluna = 0;
+				String codigoImovel = (imo.getCodigoImovel());
+				String endereco = imo.getEndereco();
+				LocalDate dataConstrucao = imo.getDataConstrucao();
+				String dataCons = dataConstrucao.getDayOfMonth()+"/"+dataConstrucao.getMonthValue()+"/"+dataConstrucao.getYear();
+				String areaTotal = Float.toString(imo.getAreaTotal());
+				String areaConstruida = Float.toString(imo.getAreaConstruida());
+				String qtdDormitorios = Integer.toString(imo.getQtdDormitoriios());
+				String qtdBanheiros = Integer.toString(imo.getQtdBanheiros());
+				String qtdVagasGarragem = Integer.toString(imo.getQtdVagasGaragem());
+				String valorIPTU = Float.toString(imo.getValorIPTU());
+				String valorVenda = Float.toString(imo.getValorVenda());
+				String valorAluguel = Float.toString(imo.getValorAluguel());
+				String taxaFederal = Float.toString(imo.getTaxaImpostoFederal());
+				
+				dados[this.linha][this.coluna] = codigoImovel; this.coluna++;
+				dados[this.linha][this.coluna] = endereco; this.coluna++;
+				dados[this.linha][this.coluna] = dataCons; this.coluna++;
+				dados[this.linha][this.coluna] = areaTotal; this.coluna++;
+				dados[this.linha][this.coluna] = areaConstruida; this.coluna++;
+				dados[this.linha][this.coluna] = qtdDormitorios; this.coluna++;
+				dados[this.linha][this.coluna] = qtdBanheiros; this.coluna++;
+				dados[this.linha][this.coluna] = qtdVagasGarragem; this.coluna++;
+				dados[this.linha][this.coluna] = valorIPTU; this.coluna++;
+				dados[this.linha][this.coluna] = valorVenda; this.coluna++;
+				dados[this.linha][this.coluna] = valorAluguel; this.coluna++;
+				dados[this.linha][this.coluna] = ""; this.coluna++;
+				dados[this.linha][this.coluna] = ""; this.coluna++;
+				dados[this.linha][this.coluna] = taxaFederal; this.coluna++;
+				this.linha++;
+			} else {
+				this.coluna = 0;
+				String codigoImovel = (imo.getCodigoImovel());
+				String endereco = imo.getEndereco();
+				LocalDate dataConstrucao = imo.getDataConstrucao();
+				String dataCons = dataConstrucao.getDayOfMonth()+"/"+dataConstrucao.getMonthValue()+"/"+dataConstrucao.getYear();
+				String areaTotal = Float.toString(imo.getAreaTotal());
+				String areaConstruida = Float.toString(imo.getAreaConstruida());
+				String qtdDormitorios = Integer.toString(imo.getQtdDormitoriios());
+				String qtdBanheiros = Integer.toString(imo.getQtdBanheiros());
+				String qtdVagasGarragem = Integer.toString(imo.getQtdVagasGaragem());
+				String valorIPTU = Float.toString(imo.getValorIPTU());
+				String valorVenda = Float.toString(imo.getValorVenda());
+				String valorAluguel = Float.toString(imo.getValorAluguel());
+				
+				dados[this.linha][this.coluna] = codigoImovel; this.coluna++;
+				dados[this.linha][this.coluna] = endereco; this.coluna++;
+				dados[this.linha][this.coluna] = dataCons; this.coluna++;
+				dados[this.linha][this.coluna] = areaTotal; this.coluna++;
+				dados[this.linha][this.coluna] = areaConstruida; this.coluna++;
+				dados[this.linha][this.coluna] = qtdDormitorios; this.coluna++;
+				dados[this.linha][this.coluna] = qtdBanheiros; this.coluna++;
+				dados[this.linha][this.coluna] = qtdVagasGarragem; this.coluna++;
+				dados[this.linha][this.coluna] = valorIPTU; this.coluna++;
+				dados[this.linha][this.coluna] = valorVenda; this.coluna++;
+				dados[this.linha][this.coluna] = valorAluguel; this.coluna++;
+				dados[this.linha][this.coluna] = ""; this.coluna++;
+				dados[this.linha][this.coluna] = ""; this.coluna++;
+				dados[this.linha][this.coluna] = ""; this.coluna++;
+				this.linha++;
+			}
+			
+		}
+	}
+
+}

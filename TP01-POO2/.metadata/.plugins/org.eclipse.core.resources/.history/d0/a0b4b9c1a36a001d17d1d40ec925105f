@@ -1,0 +1,37 @@
+package imovel;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class Comercial extends Imovel implements Serializable  {
+	protected float taxaImpostoFederal;
+
+	public Comercial() {
+	}
+
+	public Comercial(String codigoImovel, String endereco, ) {
+		super(codigoImovel, endereco, dataConstrucao, areaTotal, areaConstruida, qtdDormitoriios, qtdBanheiros,
+				qtdVagasGaragem, valorIPTU, valorVenda, valorAluguel);
+		this.taxaImpostoFederal = taxaImposto;
+	}
+	@Override
+	public float getTaxaImpostoFederal() {
+		return taxaImpostoFederal;
+	}
+
+	public String getType() {
+		return "comercio";
+	}
+	
+	public void setTaxaImpostoFederal(float taxaImpostoFederal) {
+		this.taxaImpostoFederal = taxaImpostoFederal;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "Comercio [taxaImpostoFederal=" + taxaImpostoFederal + "]";
+	}
+	
+	
+
+}

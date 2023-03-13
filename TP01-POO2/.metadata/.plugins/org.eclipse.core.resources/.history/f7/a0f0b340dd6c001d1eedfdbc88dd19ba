@@ -1,0 +1,119 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.ScrollPane;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+
+import controlador.*;
+import controle.Venda;
+import usuario.Usuario;
+import usuario.*;
+
+
+import javax.swing.JScrollPane;
+
+public class Rel_vendas extends JDialog {
+	
+	private final JPanel contentPanel = new JPanel();
+	private JTable tabela;
+	private String [][] dados;
+	private ScrollPane scp = new ScrollPane();
+	private String [] titulos = {"Codigo V.", "Cliente","Corretor", "Imovel", "Data Venda","Valor total","Pagamento"};
+	private int maxLinha;
+	private int maxColuna;
+	private int linha;
+	private int coluna;
+	private static Controlador controlador;
+
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Rel_vendas dialog = new Rel_vendas();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Rel_vendas() {
+		controlador = Controlador.getInstancia();
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(new BorderLayout(0, 0));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		contentPanel.add(scrollPane, BorderLayout.CENTER);
+		
+		setTamDadosvendas();
+		setTabela();
+		
+		tabela = new JTable(dados, titulos);
+		scrollPane.setViewportView(tabela);
+		
+		
+		
+	}
+
+	public void setTamDadosvendas() {
+		this.dados = new String[controlador.getVendas().size()][7];
+	}
+	
+	public void setTabela() {
+		ArrayList<Venda> vendas = controlador.getVendas();
+		
+		this.linha = 0;
+		for(Venda vend : vendas) {
+			this.coluna = 0;
+			String codigoVenda = (vend.getCodigoVenda());
+			String cliente = (vend.getCliente().getCodigoUsuario());
+			String corretor = (vend.getCorretor().getCodigoUsuario());
+			String imovel = (vend.getImovel().getCodigoImovel());
+			LocalDate dataVenda = vend.getDataVenda();
+			String dataVend = dataVenda.getDayOfMonth()+"/"+dataVenda.getMonthValue()+"/"+dataVenda.getYear();
+			String valorTotalVenda = Float.toString(vend.getValorTotalVenda());
+			String formaPagamento = vend.getFormaPagamento().getTipoPagamento();
+				
+					
+					
+			dados[linha][coluna] = codigoVenda; this.coluna++;
+			dados[linha][coluna] = cliente; this.coluna++;
+			dados[linha][coluna] = corretor; this.coluna++;
+			dados[linha][coluna] = imovel; this.coluna++;
+			dados[linha][coluna] = dataVend; this.coluna++;
+			dados[linha][coluna] = valorTotalVenda; this.coluna++;
+			dados[linha][coluna] = formaPagamento; this.coluna++;
+			this.linha++;
+
+			
+		
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+	}
+	
+
+}

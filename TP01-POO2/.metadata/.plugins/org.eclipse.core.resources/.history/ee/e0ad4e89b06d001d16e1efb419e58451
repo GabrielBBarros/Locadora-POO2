@@ -1,0 +1,64 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
+public final class Cad_Seguro extends JDialog {
+	
+	private static Cad_Seguro cadSegInst;
+	private static Controlador control;
+	
+	
+	private final JPanel contentPanel = new JPanel();
+
+	
+	public static void main(String[] args) {
+		try {
+			Cad_Seguro dialog = new Cad_Seguro();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static Cad_Venda getInstancia(Controlador control) {
+		if(cadVenInst == null) {
+			cadVenInst = new Cad_Venda(control);
+		}
+		return cadVenInst;
+	}
+	
+	
+	public Cad_Seguro() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setLayout(new FlowLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		{
+			JPanel buttonPane = new JPanel();
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane, BorderLayout.SOUTH);
+			{
+				JButton okButton = new JButton("OK");
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+}

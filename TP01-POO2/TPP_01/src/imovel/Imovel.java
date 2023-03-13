@@ -1,0 +1,181 @@
+package imovel;
+
+import java.io.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+public abstract class Imovel implements Serializable  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1177868786399868629L;
+	protected String codigoImovel;
+	protected String endereco;
+	protected LocalDate dataConstrucao;
+	protected float areaTotal;
+	protected float areaConstruida;
+	protected float valorIPTU;
+	protected float valorVenda;
+	protected float valorAluguel;
+	protected int qtdDormitoriios;
+	protected int qtdBanheiros;
+	protected int qtdVagasGaragem;
+
+
+
+	Imovel(){
+		
+	}
+	
+	Imovel(String codigoImovel, String endereco, LocalDate data, ArrayList<Float> f, ArrayList<Integer> in) {
+		this.codigoImovel = codigoImovel;
+		this.endereco = endereco;
+		this.dataConstrucao = data;
+		this.areaTotal = f.get(0);
+		this.areaConstruida = f.get(1);
+		this.valorIPTU = f.get(2);
+		this.valorVenda = f.get(3);
+		this.valorAluguel = f.get(4);
+		this.qtdDormitoriios = in.get(0);
+		this.qtdBanheiros = in.get(1);
+		this.qtdVagasGaragem = in.get(2);
+	}
+	
+	Imovel(String codigoImovel, String endereco, LocalDate dataConstrucao, float areaTotal, float areaConstruida,
+			int qtdDormitoriios, int qtdBanheiros, int qtdVagasGaragem, float valorIPTU, float valorVenda,
+			float valorAluguel) {
+		
+		this.codigoImovel = codigoImovel;
+		this.endereco = endereco;
+		this.dataConstrucao = dataConstrucao;
+		this.areaTotal = areaTotal;
+		this.areaConstruida = areaConstruida;
+		this.qtdDormitoriios = qtdDormitoriios;
+		this.qtdBanheiros = qtdBanheiros;
+		this.qtdVagasGaragem = qtdVagasGaragem;
+		this.valorIPTU = valorIPTU;
+		this.valorVenda = valorVenda;
+		this.valorAluguel = valorAluguel;
+	}
+	
+	public float getValorAluguelTotal() {
+		return valorAluguel;
+	}
+
+	public String getType() {
+		return null;
+	}
+	
+	public String getCodigoImovel() {
+		return codigoImovel;
+	}
+
+	public void setCodigoImovel(String codigoImovel) {
+		this.codigoImovel = codigoImovel;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public LocalDate getDataConstrucao() {
+		return dataConstrucao;
+	}
+
+	public void setDataConstrucao(LocalDate dataConstrucao) {
+		this.dataConstrucao = dataConstrucao;
+	}
+
+	public float getAreaTotal() {
+		return areaTotal;
+	}
+
+	public void setAreaTotal(float areaTotal) {
+		this.areaTotal = areaTotal;
+	}
+
+	public float getAreaConstruida() {
+		return areaConstruida;
+	}
+
+	public void setAreaConstruida(float areaConstruida) {
+		this.areaConstruida = areaConstruida;
+	}
+
+	public int getQtdDormitoriios() {
+		return qtdDormitoriios;
+	}
+
+	public void setQtdDormitoriios(int qtdDormitoriios) {
+		this.qtdDormitoriios = qtdDormitoriios;
+	}
+
+	public int getQtdBanheiros() {
+		return qtdBanheiros;
+	}
+
+	public void setQtdBanheiros(int qtdBanheiros) {
+		this.qtdBanheiros = qtdBanheiros;
+	}
+
+	public int getQtdVagasGaragem() {
+		return qtdVagasGaragem;
+	}
+
+	public void setQtdVagasGaragem(int qtdVagasGaragem) {
+		this.qtdVagasGaragem = qtdVagasGaragem;
+	}
+
+	public float getValorIPTU() {
+		return valorIPTU;
+	}
+
+	public void setValorIPTU(float valorIPTU) {
+		this.valorIPTU = valorIPTU;
+	}
+
+	public float getValorVenda() {
+		return valorVenda;
+	}
+
+	public void setValorVenda(float valorVenda) {
+		this.valorVenda = valorVenda;
+	}
+
+	public float getValorAluguel() {
+		return valorAluguel;
+	}
+
+	public void setValorAluguel(float valorAluguel) {
+		this.valorAluguel = valorAluguel;
+	}
+	
+	public float getTaxaImpostoFederal() {
+		return 0f;
+	}
+
+	public float getValorCondominio() {
+		return 0f;
+	}
+
+	@Override
+	public String toString() {
+		return "Imovel [codigoImovel=" + codigoImovel + ", endereco=" + endereco + ", dataConstrucao=" + dataConstrucao
+				+ ", areaTotal=" + areaTotal + ", areaConstruida=" + areaConstruida + ", qtdDormitoriios="
+				+ qtdDormitoriios + ", qtdBanheiros=" + qtdBanheiros + ", qtdVagasGaragem=" + qtdVagasGaragem
+				+ ", valorIPTU=" + valorIPTU + ", valorVenda=" + valorVenda + ", valorAluguel=" + valorAluguel + "]";
+	}
+
+	public int getAndar() {
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+}

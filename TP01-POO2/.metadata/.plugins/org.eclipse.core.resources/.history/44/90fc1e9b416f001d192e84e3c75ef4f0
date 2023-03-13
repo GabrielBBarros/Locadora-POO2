@@ -1,0 +1,167 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
+public final class Cad_Seguro extends JDialog {
+	
+	private static Cad_Seguro cadSegInst;
+	private static Controlador control;
+	
+	private JTextField nomeSeguradoraTXT;
+	private JTextField tipoTXT;
+	private JTextField descricaoTXT;
+	private JTextField valorTXT;
+	
+	
+	private final JPanel contentPanel = new JPanel();
+
+	
+	public static void main(String[] args) {
+		try {
+			Cad_Seguro dialog = Cad_Seguro.getInstancia(Controlador.getInstancia());
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static Cad_Seguro getInstancia(Controlador control) {
+		if(cadSegInst == null) {
+			cadSegInst = new Cad_Seguro(control);
+		}
+		return cadSegInst;
+	}
+	
+	private Cad_Seguro(Controlador control) {
+		this.control = control.getInstancia();
+		setIconImage(Toolkit.getDefaultToolkit().getImage("src/arquivos/bandeira_brasil.jpg"));
+		setTitle("Cadastro seguro");
+		setBounds(100, 100, 640, 580);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(53, 78, 81));
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		//Botão - Cadastro
+		JButton botaoCadastrar = new JButton("Cadastrar");
+		botaoCadastrar.setBounds(465, 495, 132, 32);
+		botaoCadastrar.setBorder(null);
+		botaoCadastrar.setBackground(new Color(0,39,118));
+		botaoCadastrar.setForeground(new Color(255,223,0));
+		botaoCadastrar.setFocusPainted(false);
+		contentPanel.add(botaoCadastrar);
+
+		//Botao - Cancelar
+		JButton botaoCancelar = new JButton("Cancelar");
+		botaoCancelar.setBounds(330, 495, 132, 32);
+		botaoCancelar.setBorder(null);
+		botaoCancelar.setBackground(new Color(0,39,118));
+		botaoCancelar.setForeground(new Color(255,223,0));
+		botaoCancelar.setFocusPainted(false);
+		contentPanel.add(botaoCancelar);
+		Font fonte = new Font("Serif", Font.BOLD, 15);
+
+		//-------------------------------------------------LABELS E TEXTO-------------------------------------------------//
+
+		//Segurado - 1 
+		JLabel seguradoraLabel = new JLabel("Seguradora");
+		seguradoraLabel.setFont(fonte);
+		seguradoraLabel.setBounds(60, 80, 250, 15);
+		seguradoraLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(seguradoraLabel);
+
+		nomeSeguradoraTXT = new JTextField();
+		nomeSeguradoraTXT.setBounds(60, 105, 200, 30);
+		nomeSeguradoraTXT.setColumns(10);
+		contentPanel.add(nomeSeguradoraTXT);
+		
+		//Tipo - 2
+		JLabel tipoLabel = new JLabel("Tipo");
+		tipoLabel.setFont(fonte);
+		tipoLabel.setBounds(320, 80, 250, 15);
+		tipoLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(tipoLabel);
+
+		tipoTXT = new JTextField();
+		tipoTXT.setBounds(320, 105, 200, 30);
+		tipoTXT.setColumns(10);
+		contentPanel.add(tipoTXT);
+		
+		//Descrição - 3
+		JLabel descLabel = new JLabel("Descrição");
+		descLabel.setFont(fonte);
+		descLabel.setBounds(60, 150, 250, 15);
+		descLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(descLabel);
+
+		descricaoTXT = new JTextField();
+		descricaoTXT.setBounds(60, 175, 200, 30);
+		descricaoTXT.setColumns(10);
+		contentPanel.add(descricaoTXT);
+		
+		//Valor - 4
+		JLabel valorLabel = new JLabel("Valor");
+		valorLabel.setFont(fonte);
+		valorLabel.setBounds(320, 150, 250, 15);
+		valorLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(valorLabel);
+
+		valorTXT = new JTextField();
+		valorTXT.setBounds(320, 175, 200, 30);
+		valorTXT.setColumns(10);
+		contentPanel.add(valorTXT);
+		
+		//Erro ou sucesso
+		JLabel erroSucesso = new JLabel();
+		erroSucesso.setFont(fonte);
+		erroSucesso.setBounds(330, 475, 500, 15);
+		erroSucesso.setForeground(new Color(255, 255, 255));
+		contentPanel.add(erroSucesso);
+		//-------------------------------------------------FIM LABELS E TEXTO-------------------------------------------------//
+		
+		
+		botaoCadastrar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				try {
+					if(control.cadastroSeguro(nomeSeguradoraTXT.getText().trim(), tipoTXT.getText().trim(), descricaoTXT.getText().trim(), Float.parseFloat(valorTXT.getText().trim()))) {
+						control.salvarArquivos();
+						clearTXT();
+						erroSucesso.setText("<html><center>Seguro cadastrado com Sucesso!!!</center></html>");
+					}
+					else {
+						erroSucesso.setText("<html><center>Seguro não cadastrado. Erro ocorreu!!!</center></html>");
+					}
+				} catch (Exception e2) {
+					erroSucesso.setText("<html><center>Seguro não cadastrado. Erro ocorreu!!!</center></html>");
+					e2.printStackTrace();
+				}
+				
+			}
+			
+			
+		});
+	}
+	
+	public void clearTXT() {
+		nomeSeguradoraTXT.setText("");
+		tipoTXT.setText("");
+		descricaoTXT.setText("");
+		valorTXT.setText("");
+	}
+}

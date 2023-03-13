@@ -1,0 +1,252 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
+public final class Cad_Aluguel extends JDialog {
+
+	private final JPanel contentPanel = new JPanel();
+
+	private static Cad_Aluguel cadAlgInst;
+	private static Controlador control;
+	
+	private JTextField clienteTXT;
+	private JTextField corretorTXT;
+	private JTextField imovelTXT;
+	private JTextField valorTXT;
+	private JTextField diaDevTXT;
+	private JTextField mesDevTXT;
+	private JTextField anoDevTXT;
+	private JTextField diaPagTXT;
+	
+
+
+	public static void main(String[] args) {
+		try {
+			Cad_Aluguel dialog = Cad_Aluguel.getInstancia(Controlador.getInstancia());
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static Cad_Aluguel getInstancia(Controlador control) {
+		if(cadAlgInst == null) {
+			cadAlgInst = new Cad_Aluguel(control);
+		}
+		return cadAlgInst;
+	}
+
+	private Cad_Aluguel(Controlador control) {
+		this.control = control.getInstancia();
+		setIconImage(Toolkit.getDefaultToolkit().getImage("src/arquivos/bandeira_brasil.jpg"));
+		setTitle("Cadastro Aluguel");
+		setBounds(100, 100, 640, 580);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(53, 78, 81));
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+		
+		//Botão - Cadastro
+		JButton botaoCadastrar = new JButton("Cadastrar");
+		botaoCadastrar.setBounds(465, 495, 132, 32);
+		botaoCadastrar.setBorder(null);
+		botaoCadastrar.setBackground(new Color(0,39,118));
+		botaoCadastrar.setForeground(new Color(255,223,0));
+		botaoCadastrar.setFocusPainted(false);
+		contentPanel.add(botaoCadastrar);
+
+		//Botao - Cancelar
+		JButton botaoCancelar = new JButton("Cancelar");
+		botaoCancelar.setBounds(330, 495, 132, 32);
+		botaoCancelar.setBorder(null);
+		botaoCancelar.setBackground(new Color(0,39,118));
+		botaoCancelar.setForeground(new Color(255,223,0));
+		botaoCancelar.setFocusPainted(false);
+		contentPanel.add(botaoCancelar);
+		Font fonte = new Font("Serif", Font.BOLD, 15);
+		
+		//tring cliente, String corretor, String imovel, LocalDate dataInicioAluguel, LocalDate dataDevolucao, LocalDate dataPagamentoMensal
+		
+		//-------------------------------------------------LABELS E TEXTO-------------------------------------------------//
+		//Cliente - 1 
+		JLabel clienteLabel = new JLabel("Codigo Cliente");
+		clienteLabel.setFont(fonte);
+		clienteLabel.setBounds(60, 80, 250, 15);
+		clienteLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(clienteLabel);
+
+		clienteTXT = new JTextField();
+		clienteTXT.setBounds(60, 105, 200, 30);
+		clienteTXT.setColumns(10);
+		contentPanel.add(clienteTXT);
+		
+		//Corretor - 2
+		JLabel corretorLabel = new JLabel("Codigo Corretor");
+		corretorLabel.setFont(fonte);
+		corretorLabel.setBounds(320, 80, 250, 15);
+		corretorLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(corretorLabel);
+
+		corretorTXT = new JTextField();
+		corretorTXT.setBounds(320, 105, 200, 30);
+		corretorTXT.setColumns(10);
+		contentPanel.add(corretorTXT);
+		
+		//Imovel - 3
+		JLabel imovelLabel = new JLabel("Codigo Imovel");
+		imovelLabel.setFont(fonte);
+		imovelLabel.setBounds(60, 150, 250, 15);
+		imovelLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(imovelLabel);
+
+		imovelTXT = new JTextField();
+		imovelTXT.setBounds(60, 175, 200, 30);
+		imovelTXT.setColumns(10);
+		contentPanel.add(imovelTXT);
+		
+		//Valor - 4
+		JLabel valorLabel = new JLabel("Valor da Venda");
+		valorLabel.setFont(fonte);
+		valorLabel.setBounds(320, 150, 250, 15);
+		valorLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(valorLabel);
+
+		valorTXT = new JTextField();
+		valorTXT.setBounds(320, 175, 200, 30);
+		valorTXT.setColumns(10);
+		contentPanel.add(valorTXT);
+		
+		
+		//Data devolucao - 4
+		JLabel devolucaoLabel = new JLabel("Data de Devolução");
+		devolucaoLabel.setFont(fonte);
+		devolucaoLabel.setBounds(62, 250, 250, 15);
+		devolucaoLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(devolucaoLabel);
+		
+		//Data devolucao - 4.1
+		JLabel diaLabel = new JLabel("Dia");
+		diaLabel.setFont(fonte);
+		diaLabel.setBounds(322, 220, 30, 15);
+		diaLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(diaLabel);
+
+		diaDevTXT = new JTextField();
+		diaDevTXT.setBounds(322, 245, 50, 30);
+		diaDevTXT.setColumns(10);
+		contentPanel.add(diaDevTXT);
+		
+		//Data devolucao - 4.2
+		JLabel mesLavel = new JLabel("Mês");
+		mesLavel.setForeground(Color.WHITE);
+		mesLavel.setFont(new Font("Serif", Font.BOLD, 15));
+		mesLavel.setBounds(392, 220, 30, 15);
+		contentPanel.add(mesLavel);
+		
+		mesDevTXT = new JTextField();
+		mesDevTXT.setColumns(10);
+		mesDevTXT.setBounds(392, 245, 50, 30);
+		contentPanel.add(mesDevTXT);
+		
+		//Data devolucao - 4.3
+		JLabel anoLabel = new JLabel("Ano");
+		anoLabel.setForeground(Color.WHITE);
+		anoLabel.setFont(new Font("Serif", Font.BOLD, 15));
+		anoLabel.setBounds(465, 220, 30, 15);
+		contentPanel.add(anoLabel);
+		
+		anoDevTXT = new JTextField();
+		anoDevTXT.setColumns(10);
+		anoDevTXT.setBounds(465, 245, 50, 30);
+		contentPanel.add(anoDevTXT);
+		
+		//Data devolucao - 4
+		JLabel diaPagLabel = new JLabel("Dia do Pagamento");
+		diaPagLabel.setFont(fonte);
+		diaPagLabel.setBounds(62, 320, 250, 15);
+		diaPagLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(diaPagLabel);
+		
+		diaPagTXT = new JTextField();
+		diaPagTXT.setBounds(322, 320, 50, 30);
+		diaPagTXT.setColumns(10);
+		contentPanel.add(diaPagTXT);
+
+		
+		//Erro ou sucesso
+		JLabel erroSucesso = new JLabel();
+		erroSucesso.setFont(fonte);
+		erroSucesso.setBounds(330, 475, 500, 15);
+		erroSucesso.setForeground(new Color(255, 255, 255));
+		contentPanel.add(erroSucesso);
+		//-------------------------------------------------FIM LABELS E TEXTO-------------------------------------------------//
+		botaoCadastrar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				try {
+					
+					LocalDate dev = LocalDate.parse(setData(Integer.parseInt(diaDevTXT.getText().trim()), Integer.parseInt(mesDevTXT.getText().trim()), Integer.parseInt(anoDevTXT.getText().trim())));
+					LocalDate hoje = LocalDate.now();
+					hoje = hoje.plusMonths(1);
+					LocalDate pg = LocalDate.parse(setData(Integer.parseInt(diaPagTXT.getText().trim()), hoje.getMonthValue(), DO_NOTHING_ON_CLOSE));
+					
+					if(control.cadastroAluguel(clienteTXT.getText().trim().toUpperCase(), corretorTXT.getText().trim().toUpperCase(), imovelTXT.getText().trim().toUpperCase(), null, null, null)) {
+						control.salvarArquivos();
+						erroSucesso.setText("<html><center>Aluguel cadastrado com Sucesso!!!</center></html>");
+					}
+					else {
+						erroSucesso.setText("<html><center>Aluguel não cadastrado. Erro ocorreu!!!</center></html>");
+					}
+				} catch (Exception e2) {
+					erroSucesso.setText("<html><center>Aluguel não cadastrado. Erro exception!!!</center></html>");
+					e2.printStackTrace();
+				}
+				
+			}
+			
+			
+		});
+		
+	}
+	
+	
+	public String setData(int dia, int mes, int ano) {
+		if(dia >= 10) {
+			if(mes >= 10) {
+				return Integer.toString(ano) + "-" + Integer.toString(mes) + "-" + Integer.toString(dia);
+			}
+			else {
+				return Integer.toString(ano) + "-0" + Integer.toString(mes) + "-" + Integer.toString(dia);
+			}
+		}
+		else {
+			if(mes >= 10) {
+				return Integer.toString(ano) + "-" + Integer.toString(mes) + "-0" + Integer.toString(dia);
+			}
+			else {
+				return Integer.toString(ano) + "-0" + Integer.toString(mes) + "-0" + Integer.toString(dia);
+			}
+		}
+	}
+	
+
+}

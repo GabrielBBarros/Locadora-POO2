@@ -1,0 +1,860 @@
+package controle;
+
+import java.io.*;
+import java.lang.reflect.Array;
+import java.time.*;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import imovel.*;
+import seguro.*;
+import usuario.*;
+
+public final class Imobiliaria {
+	private ArrayList<Aluguel> alugueis;
+	private ArrayList<Venda> vendas;
+	private ArrayList<Imovel> imoveis;
+	private ArrayList<Usuario> clientes;
+	private ArrayList<Usuario> corretores;
+	private ArrayList<Seguro> seguros;
+	
+	
+	private String nome;
+	private String endereco;
+	private static Imobiliaria instanciaImobiliaria = null;
+	private static Configuracao configuracao;
+	
+	private Imobiliaria() {
+		configuracao = Configuracao.getInstancia();
+		alugueis = new ArrayList<>();
+		vendas = new ArrayList<>();
+		imoveis = new ArrayList<>();
+		clientes = new ArrayList<>();
+		corretores = new ArrayList<>();
+		seguros = new ArrayList<>();
+		try {
+			carregaArquivos();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static Imobiliaria getInstancia() {
+		if(instanciaImobiliaria == null) {
+			instanciaImobiliaria = new Imobiliaria();
+		}
+		return instanciaImobiliaria;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public void carregaArquivos() throws IOException {
+		try {
+			FileInputStream inn = new FileInputStream(configuracao.getArquivoCliente());
+			ObjectInputStream obj = new ObjectInputStream(inn);
+			clientes = (ArrayList<Usuario>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoCorretores());
+			obj = new ObjectInputStream(inn);
+			corretores = (ArrayList<Usuario>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoImoveis());
+			obj = new ObjectInputStream(inn);
+			imoveis = (ArrayList<Imovel>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoVendas());
+			obj = new ObjectInputStream(inn);
+			vendas = (ArrayList<Venda>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoSeguros());
+			obj = new ObjectInputStream(inn);
+			seguros = (ArrayList<Seguro>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoAlugueis());
+			obj = new ObjectInputStream(inn);
+			alugueis = (ArrayList<Aluguel>) obj.readObject();
+			obj.close();
+			inn.close();
+		} catch (IOException|ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean salvarAlugueis() {
+		try {
+			FileOutputStream out = new FileOutputStream(configuracao.getArquivoAlugueis());
+			ObjectOutputStream obj = new ObjectOutputStream(out);
+			obj.writeObject(this.alugueis);
+			obj.close();
+			out.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarVendas() {
+		try {
+			FileOutputStream out = new FileOutputStream(configuracao.getArquivoVendas());
+			ObjectOutputStream obj = new ObjectOutputStream(out);
+			obj.writeObject(this.vendas);
+			obj.close();
+			out.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarImovel() {
+		try {
+			FileOutputStream out = new FileOutputStream(configuracao.getArquivoImoveis());
+			ObjectOutputStream obj = new ObjectOutputStream(out);
+			obj.writeObject(this.imoveis);
+			obj.close();
+			out.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean salvarClientes() {
+		try {
+			FileOutputStream out = new FileOutputStream(configuracao.getArquivoCliente());
+			ObjectOutputStream obj = new ObjectOutputStream(out);
+			obj.writeObject(this.clientes);
+			obj.close();
+			out.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarCorretores() {
+		try {
+			FileOutputStream out = new FileOutputStream(configuracao.getArquivoCorretores());
+			ObjectOutputStream obj = new ObjectOutputStream(out);
+			obj.writeObject(this.corretores);
+			obj.close();
+			out.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarSeguros() {
+		try {
+			FileOutputStream out = new FileOutputStream(configuracao.getArquivoSeguros());
+			ObjectOutputStream obj = new ObjectOutputStream(out);
+			obj.writeObject(this.seguros);
+			obj.close();
+			out.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean salvarArquivos() {
+		try {
+			if(salvarAlugueis() && salvarClientes() && salvarVendas() && salvarImovel() && salvarCorretores() && salvarSeguros()) {
+				return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
+	
+	public boolean buscaCliente(String codigo) {
+		try {
+			for(Usuario usu: clientes) {
+				if(usu.getCodigoUsuario().equalsIgnoreCase(codigo))
+					return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean buscaCorretor(String codigo) {
+		try {
+			for(Usuario usu: corretores) {
+				if(usu.getCodigoUsuario().equalsIgnoreCase(codigo))
+					return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean buscaVenda(String codigo) {
+		try {
+			for(Venda venda: vendas) {
+				if(venda.getCodigoVenda().equalsIgnoreCase(codigo))
+					return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean buscaImovel(String codigo) {
+		try {
+			for(Imovel imovel: imoveis) {
+				if(imovel.getCodigoImovel().equalsIgnoreCase(codigo))
+					return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean buscaAlugueis(String codigo) {
+		try {
+			for(Aluguel aluguel: alugueis) {
+				if(aluguel.getCodigoAluguel().equalsIgnoreCase(codigo))
+					return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean buscaSeguro(String codigo) {
+		try {
+			for(Seguro seguro: seguros) {
+				if(seguro.getCodigoSeguro().equalsIgnoreCase(codigo))
+					return true;
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public Usuario retornoCliente(String codigo) {
+		try {
+			for(Usuario usu: clientes) {
+				if(usu.getCodigoUsuario().equalsIgnoreCase(codigo))
+					return usu;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Usuario retornoCorretor(String codigo) {
+		try {
+			for(Usuario usu: corretores) {
+				if(usu.getCodigoUsuario().equalsIgnoreCase(codigo))
+					return usu;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Venda retornoVenda(String codigo) {
+		try {
+			for(Venda venda: vendas) {
+				if(venda.getCodigoVenda().equalsIgnoreCase(codigo))
+					return venda;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Imovel retornoImovel(String codigo) {
+		try {
+			for(Imovel imovel: imoveis) {
+				if(imovel.getCodigoImovel().equalsIgnoreCase(codigo))
+					return imovel;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Aluguel retornoAlugueis(String codigo) {
+		try {
+			for(Aluguel aluguel: alugueis) {
+				if(aluguel.getCodigoAluguel().equalsIgnoreCase(codigo))
+					return aluguel;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Seguro retornoSeguro(String codigo) {
+		try {
+			for(Seguro seguro: seguros) {
+				if(seguro.getCodigoSeguro().equalsIgnoreCase(codigo))
+					return seguro;
+			}
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public boolean cadastroCliente(ArrayList<String> str, LocalDate dataNascimento, LocalDate dataCadastro ){
+		try {
+			Cliente cliente = new Cliente(geraCodigoCliente(),dataNascimento, dataCadastro, str);
+			return this.clientes.add(cliente);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroCorretor(ArrayList<String> str, LocalDate dataNascimento, float salario, LocalDate dataAdmissao){
+		try {
+			Corretor corretor = new Corretor(geraCodigoCorretor(), salario, dataNascimento, dataAdmissao, str);
+			if (this.corretores.add(corretor)){
+				System.out.println(corretor);
+				return true;
+			}
+			return false;
+			
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroResidencia(String endereco, LocalDate data, ArrayList<Float> fl, ArrayList<Integer> in) {
+		try {
+			
+			CasaResidencial casa = new CasaResidencial(geraCodigoResidencia(), endereco, data, fl, in);
+			this.imoveis.add(casa);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroComercial(String endereco, LocalDate data, ArrayList<Float> f, ArrayList<Integer> in) {
+		try {
+			Comercial comercio = new Comercial(geraCodigoComerio(), endereco, data, f, in);
+			return imoveis.add(comercio);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroApartamento(String endereco, LocalDate data, ArrayList<Float> f, ArrayList<Integer> in) {
+		try {
+			Apartamento ap = new Apartamento(geraCodigoApartamento(), endereco, data, f, in);
+			return imoveis.add(ap);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroVenda(String cliente, String corretor, String imovel, LocalDate dataVenda,
+			float valorTotalVenda, ArrayList<String> formaPagamento) {
+		try {
+			Pagamento pg = new Cartao(formaPagamento.get(0), formaPagamento.get(1), formaPagamento.get(2), formaPagamento.get(3));
+			if(retornoCliente(cliente) != null && retornoCorretor(corretor) != null &&  retornoImovel(imovel) != null) {
+				Venda venda = new Venda(geraCodigoVenda(), retornoCliente(cliente), retornoCorretor(corretor), retornoImovel(imovel), dataVenda, valorTotalVenda, pg);
+				return vendas.add(venda);
+			}
+			return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroAluguel(String cliente, String corretor, String imovel, LocalDate dataInicioAluguel,
+			LocalDate dataDevolucao, LocalDate dataPagamentoMensal) {
+		try {
+			Usuario cli = retornoCliente(cliente);
+			Usuario cor = retornoCorretor(corretor);
+			Imovel imo = retornoImovel(imovel);
+			if(cli == null || cor == null || imo == null) {
+				return false;
+			}
+			Aluguel aluguel = new Aluguel(geraCodigoaluguel(), cli, cor, imo, dataInicioAluguel, dataDevolucao, dataPagamentoMensal);
+			return alugueis.add(aluguel);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public boolean cadastroSeguro(String nomeSeguradora, String tipo, String descricao, float valor) {
+		try {
+			Seguro seguro = new Seguro(geraCodigoSeguro(), nomeSeguradora, tipo, descricao, valor);
+			return seguros.add(seguro);
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public String geraCodigoCliente() {
+		String codigo = "CL";
+		String backup;
+		int tamanho = this.clientes.size();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+	
+	public String geraCodigoCorretor() {
+		String codigo = "CO";
+		String backup;
+		int tamanho = this.corretores.size();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+	
+	public String geraCodigoResidencia() {
+		String codigo = "RE";
+		String backup;
+		int tamanho = contResidencial();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+	
+	public String geraCodigoApartamento() {
+		String codigo = "AP";
+		String backup;
+		int tamanho = contApto();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+	
+	public String geraCodigoComerio() {
+		String codigo = "CM";
+		String backup;
+		int tamanho = contComercio();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+	
+	public String geraCodigoSeguro() {
+		String codigo = "SE";
+		String backup;
+		int tamanho = this.seguros.size();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+	
+	public String geraCodigoVenda() {
+		String codigo = "VD";
+		String backup;
+		int tamanho = this.vendas.size();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+
+	public String geraCodigoaluguel() {
+		String codigo = "AL";
+		String backup;
+		int tamanho = this.alugueis.size();
+		backup = Integer.toString(tamanho);
+		if (tamanho < 10) {
+			backup =  ("00"+backup);
+		} else if( tamanho < 100) {
+			backup = ("0" + backup);
+		}
+		codigo = codigo.concat(backup);
+		return codigo;
+	}
+
+	public int contApto() {
+		int soma = 0;
+		for(Imovel imv: imoveis) {
+			if(imv instanceof Apartamento) 
+				soma++;
+		}
+		return soma;
+	}
+	
+	public int contComercio() {
+		int soma = 0;
+		for(Imovel imv: imoveis) {
+			if(imv instanceof Comercial) 
+				soma++;
+		}
+		return soma;
+	}
+	
+	public int contResidencial() {
+		int soma = 0;
+		for(Imovel imv: imoveis) {
+			if(imv instanceof CasaResidencial) 
+				soma++;
+		}
+		return soma;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	
+	public int pagarAluguel(String codigoAluguel, ArrayList<String> str, float valor) {
+		try {
+			Aluguel aluguel = retornoAlugueis(codigoAluguel);
+			if(aluguel != null) {
+				return aluguel.pagar(valor, str);
+			}
+			return 0;
+		} catch (Exception e) {
+			return -1;
+		}
+	}
+
+	public ArrayList<Imovel> imoveisDispo(){
+		ArrayList<Imovel> im = new ArrayList<>();
+		for(Imovel imo: imoveis) {
+			if(!estaAlugado(imo) && !estaComprado(imo)) {
+				im.add(imo);
+			}
+		}
+		return im;
+	}
+	
+	public ArrayList<Imovel> imoveisNaoDispo(){
+		ArrayList<Imovel> im = new ArrayList<>();
+		for(Imovel imo: imoveis) {
+			if(estaAlugado(imo) || estaComprado(imo)) {
+				im.add(imo);
+			}
+		}
+		return im;
+	}
+
+	public ArrayList<Imovel> imoveisAtrasados(){
+		ArrayList<Imovel> im = new ArrayList<>();
+		for(Aluguel alu: alugueis) {
+			if(!alu.isPago()) {
+				im.add(alu.getImovel());
+			}
+		}
+		return im;
+	}
+	
+	public boolean estaAlugado(Imovel imovel) {
+		for(Aluguel al: alugueis) {
+			if((al.getImovel().getCodigoImovel()).equalsIgnoreCase(imovel.getCodigoImovel()))
+				return true;
+		}
+		return false;
+	}
+	
+	public boolean estaComprado(Imovel imovel) {
+		for(Venda ven: vendas) {
+			if(ven.getCodigoImovel().equalsIgnoreCase(imovel.getCodigoImovel()))
+				return true;
+		}
+		return false;
+	}
+	
+	public ArrayList<Imovel> imoveisAlugadosCliente(String codigo){
+		ArrayList<Imovel> im = new ArrayList<>();
+		for(Aluguel alu: alugueis) {
+			if(alu.getCliente().getCodigoUsuario().equalsIgnoreCase(codigo)) {
+				im.add(alu.getImovel());
+			}
+		}
+		return im;
+	}
+	
+	public ArrayList<Imovel> imoveisCompradosCliente(String codigo){
+		ArrayList<Imovel> im = new ArrayList<>();
+		for(Venda ven: vendas) {
+			if(ven.getCliente().getCodigoUsuario().equalsIgnoreCase(codigo)) {
+				im.add(ven.getImovel());
+			}
+		}
+		return im;
+	}
+
+	public ArrayList<Usuario> funcionarioDoMes(int mes) {
+		ArrayList<Aluguel> al = aluguelMes(mes);
+		ArrayList<Venda> vn = vendasMes(mes);
+		ArrayList<Usuario> usu = new ArrayList<>();
+		ArrayList<Usuario> retorno = new ArrayList<>();
+		Map<Usuario, Integer> map = new HashMap<>();
+		for(Aluguel alu: al) {
+			if(map.containsKey(alu.getCorretor())) {
+				map.put(alu.getCorretor(), map.get(alu.getCorretor()) + 1);
+			}
+			else {
+				map.put(alu.getCorretor(), 1);
+			}
+		}
+		for(Venda ven: vn) {
+			if(map.containsKey(ven.getCorretor())) {
+				map.put(ven.getCorretor(), map.get(ven.getCorretor()) + 1);
+			}
+			else {
+				map.put(ven.getCorretor(), 1);
+			}
+		}
+		Map<Usuario, Integer> mapOrdenado = map.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1,e2) -> e1, LinkedHashMap::new) );
+		for(Usuario key: mapOrdenado.keySet()) {
+			usu.add(key);
+		}
+		int cont = 1;
+		for(Usuario corretor: usu) {
+			retorno.add(usu.get(usu.size()-cont));
+			if(cont == 4);
+				break;
+		}
+		
+		return usu;
+	}
+	
+	public int posicaoFun(ArrayList<Usuario> cor, Usuario comp) {
+		int cont = 0;
+		for(Usuario cr7: cor) {
+			if(comp.getCodigoUsuario().equalsIgnoreCase(cr7.getCodigoUsuario())) {
+				return cont;
+			}
+			cont++;
+		}
+		return cont;
+	}
+	
+	public ArrayList<Usuario> clientesAluguelAtrasado(){
+		ArrayList<Usuario> cl = new ArrayList<>();
+		for(Aluguel alu: alugueis) {
+			if(!alu.isPago() && !cl.contains(alu.getCliente())) {
+				cl.add(alu.getCliente());
+			}
+		}
+		return cl;
+	}
+	
+	public ArrayList<Aluguel> alugueisAtrasados(){
+		ArrayList<Aluguel> al = new ArrayList<>();
+		for(Aluguel alu: alugueis) {
+			if(!alu.isPago())
+				al.add(alu);
+		}
+		return al;
+	}
+	
+	public ArrayList<Aluguel> alugueisAcabados(){
+		ArrayList<Aluguel> al = new ArrayList<>();
+		LocalDate hoje = LocalDate.now();
+		for(Aluguel alu: alugueis) {
+			if(hoje.isAfter(alu.getDataDevolucao()))
+				al.add(alu);
+		}
+		return al;
+	}
+	
+	public ArrayList<Aluguel> alugueisNaoAcabados(){
+		ArrayList<Aluguel> al = new ArrayList<>();
+		LocalDate hoje = LocalDate.now();
+		for(Aluguel alu: alugueis) {
+			if(hoje.isBefore(alu.getDataDevolucao()))
+				al.add(alu);
+		}
+		return al;
+	}
+	
+	public ArrayList<Imovel> casasAlugadas(){
+		ArrayList<Imovel> im = new ArrayList<>();
+		LocalDate hoje = LocalDate.now();
+		for(Aluguel alu: alugueis) {
+			if(alu.getImovel() instanceof CasaResidencial && hoje.isBefore(alu.getDataDevolucao())) {
+					im.add(alu.getImovel());
+			}
+		}
+		return im;
+	}
+	
+	public ArrayList<Imovel> apartamentoAlugados(){
+		ArrayList<Imovel> im = new ArrayList<>();
+		LocalDate hoje = LocalDate.now();
+		for(Aluguel alu: alugueis) {
+			if(alu.getImovel() instanceof Apartamento && hoje.isBefore(alu.getDataDevolucao())) {
+					im.add(alu.getImovel());
+			}
+		}
+		return im;
+	}
+	
+	public ArrayList<Imovel> comercioAlugados(){
+		ArrayList<Imovel> im = new ArrayList<>();
+		LocalDate hoje = LocalDate.now();
+		for(Aluguel alu: alugueis) {
+			if(alu.getImovel() instanceof Comercial && hoje.isBefore(alu.getDataDevolucao())) {
+					im.add(alu.getImovel());
+			}
+		}
+		return im;
+	}
+	
+	public ArrayList<Venda> vendasMes(int mes){
+		ArrayList<Venda> vn = new ArrayList<>();
+		for(Venda ven: vendas) {
+			if(ven.getDataVenda().getMonthValue() == mes) {
+				vn.add(ven);
+			}
+			if(ven.getDataVenda().getMonthValue() > mes)
+				break;
+		}
+		return vn;
+	}
+	
+	public ArrayList<Aluguel> aluguelMes(int mes){
+		ArrayList<Aluguel> al = new ArrayList<>();
+		for(Aluguel alu: alugueis) {
+			if(alu.getDataInicioAluguel().getMonthValue() == mes) {
+				al.add(alu);
+			}
+			if(alu.getDataInicioAluguel().getMonthValue() > mes)
+				break;
+		}
+		return al;
+	}
+	
+	public boolean ativarSeguro(String aluguel, String seguro) {
+		Aluguel alu = retornoAlugueis(aluguel);
+		if(alu != null) {
+			Seguro seg = retornoSeguro(seguro);
+			if(seg != null) {
+				alu.addSeguro(seg);
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
+
+	public ArrayList<Aluguel> getAlugueis() {
+		return alugueis;
+	}
+
+	public ArrayList<Venda> getVendas() {
+		return vendas;
+	}
+
+	public ArrayList<Imovel> getImoveis() {
+		return imoveis;
+	}
+
+	public ArrayList<Usuario> getClientes() {
+		return clientes;
+	}
+
+	public ArrayList<Usuario> getCorretores() {
+		return corretores;
+	}
+
+	public ArrayList<Seguro> getSeguros() {
+		return seguros;
+	}
+	
+	public ArrayList<Imovel> getApartamentos() {
+		ArrayList<Imovel> apto = new ArrayList<>();
+		for(Imovel imo: imoveis) {
+			if(imo instanceof Apartamento) {
+				apto.add(imo);
+			}
+		}
+		return apto;
+	}
+	
+	public ArrayList<Imovel> getCasas() {
+		ArrayList<Imovel> casas = new ArrayList<>();
+		for(Imovel imo: imoveis) {
+			if(imo instanceof CasaResidencial) {
+				casas.add(imo);
+			}
+		}
+		return casas;
+	}
+	
+	public ArrayList<Imovel> getComerios() {
+		ArrayList<Imovel> com = new ArrayList<>();
+		for(Imovel imo: imoveis) {
+			if(imo instanceof Comercial) {
+				com.add(imo);
+			}
+		}
+		return com;
+	}
+}

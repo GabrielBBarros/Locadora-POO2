@@ -1,0 +1,102 @@
+package controlador;
+
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import controle.Aluguel;
+import controle.Configuracao;
+import controle.Venda;
+import imovel.*;
+import seguro.*;
+import usuario.*;
+import controle.*;
+
+public class criarSer {
+
+	@SuppressWarnings("unchecked")
+	public static void main(String[] args) {
+		
+		ArrayList<Aluguel> alugueis;
+		ArrayList<Venda> vendas;
+		ArrayList<Imovel> imoveis;
+		ArrayList<Usuario> clientes;
+		ArrayList<Usuario> corretores;
+		ArrayList<Seguro> seguros;
+		Configuracao configuracao;
+		
+		
+		configuracao = Configuracao.getInstancia();
+		alugueis = new ArrayList<>();
+		vendas = new ArrayList<>();
+		imoveis = new ArrayList<>();
+		clientes = new ArrayList<>();
+		corretores = new ArrayList<>();
+		seguros = new ArrayList<>();
+		LocalDate data = LocalDate.now();
+		imoveis.clear();
+		clientes.clear();
+		corretores.clear();
+		alugueis.clear();
+		vendas.clear();
+		seguros.clear();
+		try {
+			FileInputStream inn = new FileInputStream(configuracao.getArquivoImoveis());
+			ObjectInputStream obj = new ObjectInputStream(inn);
+			imoveis = (ArrayList<Imovel>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			//Clientes
+			inn = new FileInputStream(configuracao.getArquivoCliente());
+			obj = new ObjectInputStream(inn);
+			clientes = (ArrayList<Usuario>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			//Corretores
+			inn = new FileInputStream(configuracao.getArquivoCorretores());
+			obj = new ObjectInputStream(inn);
+			corretores = (ArrayList<Usuario>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			//Alugueis
+			inn = new FileInputStream(configuracao.getArquivoAlugueis());
+			obj = new ObjectInputStream(inn);
+			alugueis = (ArrayList<Aluguel>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			//Vendas
+			inn = new FileInputStream(configuracao.getArquivoVendas());
+			obj = new ObjectInputStream(inn);
+			vendas = (ArrayList<Venda>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			//Seguros
+			inn = new FileInputStream(configuracao.getArquivoSeguros());
+			obj = new ObjectInputStream(inn);
+			seguros = (ArrayList<Seguro>) obj.readObject();
+			obj.close();
+			inn.close();
+		} catch (IOException|ClassNotFoundException e) {
+			System.out.println("Erro ao carregar os dados!");
+		}
+		for(Seguro se: seguros) {
+			System.out.println(se);
+		}
+		
+		
+		
+		
+ }
+
+}

@@ -1,0 +1,24 @@
+package imovel;
+
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class CasaResidencial extends Imovel implements Serializable  {
+
+	public CasaResidencial() {
+		
+	}
+
+	public CasaResidencial(String codigoImovel, String endereco, ArrayList<LocalDate> data, ArrayList<Float> f, ArrayList<Integer> in) {
+		
+		super(codigoImovel, endereco, dataConstrucao, areaTotal, areaConstruida, qtdDormitoriios, qtdBanheiros,
+				qtdVagasGaragem, valorIPTU, valorVenda, valorAluguel);
+		
+	}
+	
+	
+	public String getType() {
+		return "residencia";
+	}
+}

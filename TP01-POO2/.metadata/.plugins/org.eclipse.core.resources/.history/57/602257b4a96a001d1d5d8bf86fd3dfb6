@@ -1,0 +1,28 @@
+package seguro;
+
+import java.io.*;
+
+public class Pagamento implements Serializable  {
+	protected String tipoPagamento;
+
+	public Pagamento(){
+	}
+	
+	public Pagamento(String tipoPagamento) {
+		this.tipoPagamento = tipoPagamento;
+	}
+
+	public String getTipoPagamento() {
+		return tipoPagamento;
+	}
+
+	public void setTipoPagamento(String tipoPagamento) {
+		this.tipoPagamento = tipoPagamento;
+	}
+
+	@Override
+	public abstract  String toString();
+	
+	
+	
+}

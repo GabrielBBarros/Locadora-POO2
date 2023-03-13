@@ -1,0 +1,123 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.ScrollPane;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+
+import controlador.*;
+import imovel.*;
+import usuario.Usuario;
+
+import javax.swing.JScrollPane;
+
+public class Rel_casa extends JDialog {
+	
+	private final JPanel contentPanel = new JPanel();
+	private JTable tabela;
+	private String [][] dados;
+	private ScrollPane scp = new ScrollPane();
+	private String [] titulos = {"Codigo", "Endere�o", "D. Constru��o", "A. Total", "A. Construida","Dormitorios","Banheiros", "V. Garagem", "IPTU", "Venda", "Aluguel"};
+	private int maxLinha;
+	private int maxColuna;
+	private int linha;
+	private int coluna;
+	private static Controlador controlador;
+
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Rel_casa dialog = new Rel_casa();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Rel_casa() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(new BorderLayout(0, 0));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		contentPanel.add(scrollPane, BorderLayout.CENTER);
+		
+		setTamDadoscasa();
+		setTabela();
+		
+		tabela = new JTable(dados, titulos);
+		scrollPane.setViewportView(tabela);
+		
+		
+		
+	}
+
+	public void setTamDadoscasa() {
+		this.maxLinha = controlador.getCasas().size();
+		this.maxColuna = 9;
+		this.dados = new String[maxLinha][maxColuna];
+	}
+	
+	public void setTabela() {
+		ArrayList<Imovel> casasResidenciais = controlador.getCasas();
+		
+		this.linha = 0;
+		for(Imovel imo : casasResidenciais) {
+			this.coluna = 0;
+			String codigoImovel = (imo.getCodigoImovel());
+			String endereco = imo.getEndereco();
+			LocalDate dataConstrucao = imo.getDataConstrucao();
+			String data_cons = dataConstrucao.getDayOfMonth()+"/"+dataConstrucao.getMonthValue()+"/"+dataConstrucao.getYear();
+			String areaTotal = Float.toString(imo.getAreaTotal());
+			String areaConstruida = Float.toString(imo.getAreaConstruida());
+			String qtdDormitorios = Integer.toString(imo.getQtdDormitoriios());
+			String qtdBanheiros = Integer.toString(imo.getQtdBanheiros());
+			String qtdVagasGarragem = Integer.toString(imo.getQtdVagasGaragem());
+			String valorIPTU = Float.toString(imo.getValorIPTU());
+			String valorVenda = Float.toString(imo.getValorVenda());
+			String valorAluguel = Float.toString(imo.getValorAluguel());
+			
+			
+			dados[linha][coluna] = codigoImovel; this.coluna++;
+			dados[linha][coluna] = endereco; this.coluna++;
+			dados[linha][coluna] = data_cons; this.coluna++;
+			dados[linha][coluna] = areaTotal; this.coluna++;
+			dados[linha][coluna] = areaConstruida; this.coluna++;
+			dados[linha][coluna] = qtdDormitorios; this.coluna++;
+			dados[linha][coluna] = qtdBanheiros; this.coluna++;
+			dados[linha][coluna] = qtdVagasGarragem; this.coluna++;
+			dados[linha][coluna] = valorIPTU; this.coluna++;
+			dados[linha][coluna] = valorVenda; this.coluna++;
+			dados[linha][coluna] = valorAluguel; this.coluna++;
+			
+		
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+	}
+	
+
+}

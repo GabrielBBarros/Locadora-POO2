@@ -1,0 +1,14 @@
+package controlador;
+
+import java.time.LocalDate;
+
+public class sadasdas {
+
+	public static void main(String[] args) {
+		LocalDate local = LocalDate.now();
+		
+		System.out.println(local);
+		System.out.println(local.getDayOfMonth() + "/" + local.getMonthValue() + "/" + local.getYear());
+	}
+
+}

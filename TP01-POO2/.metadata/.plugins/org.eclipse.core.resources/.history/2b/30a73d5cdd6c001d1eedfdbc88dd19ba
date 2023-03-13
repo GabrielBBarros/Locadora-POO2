@@ -1,0 +1,106 @@
+package telas;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.ScrollPane;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+
+import controlador.*;
+import controle.Venda;
+import seguro.Seguro;
+import usuario.Usuario;
+import usuario.*;
+
+
+import javax.swing.JScrollPane;
+
+public class Rel_seguros extends JDialog {
+	
+	private final JPanel contentPanel = new JPanel();
+	private JTable tabela;
+	private String [][] dados;
+	private ScrollPane scp = new ScrollPane();
+	private String [] titulos = {"Codigo S.", "Nome Seguradora","Tipo", "Descricao", "Valor"};
+	private int maxLinha;
+	private int maxColuna;
+	private int linha;
+	private int coluna;
+	private static Controlador controlador;
+
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			Rel_seguros dialog = new Rel_seguros();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public Rel_seguros() {
+		controlador = Controlador.getInstancia();
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(new BorderLayout(0, 0));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		contentPanel.add(scrollPane, BorderLayout.CENTER);
+		
+		setTamDadosseguros();
+		setTabela();
+		
+		tabela = new JTable(dados, titulos);
+		scrollPane.setViewportView(tabela);
+		
+		
+		
+	}
+
+	public void setTamDadosseguros() {
+		this.maxLinha = controlador.getSeguros().size();
+		this.maxColuna = 5;
+		this.dados = new String[maxLinha][maxColuna];
+	}
+	
+	public void setTabela() {
+		ArrayList<Seguro> seguro = controlador.getSeguros();
+		
+		this.linha = 0;
+		for(Seguro seg : seguro) {
+			this.coluna = 0;
+			
+			String codigoSeguro = (seg.getCodigoSeguro());
+			String nomeSeguradora = seg.getNomeSeguradora();
+			String tipo = seg.getTipo();
+			String descricao = seg.getDescricao();
+			String valor = Float.toString(seg.getValor());
+					
+					
+			dados[this.linha][this.coluna] = codigoSeguro; this.coluna++;
+			dados[this.linha][this.coluna] = nomeSeguradora; this.coluna++;
+			dados[this.linha][this.coluna] = tipo; this.coluna++;
+			dados[this.linha][this.coluna] = descricao; this.coluna++;
+			dados[this.linha][this.coluna] = valor; this.coluna++;
+			this.linha++;
+		}
+		
+	}
+	
+}

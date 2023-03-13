@@ -1,0 +1,18 @@
+
+|
+java:S1192S"FDefine a constant instead of duplicating this literal "Serif" 3 times.(¡€¡Z8±ì»‹Ë0Hõ—RCRITICALZ
+CODE_SMELL
+n
+java:S2209>"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8Ÿë¢Ë0Hû—RMAJORZ
+CODE_SMELL
+]
+java:S3010>"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8Ÿë¢Ë0Hù—RMAJORZ
+CODE_SMELL
+n
+java:S2209>"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8Ÿë¢Ë0Hÿ—RMAJORZ
+CODE_SMELL
+n
+java:S2209."5Change this instance-reference to a static reference.(·²éÌşÿÿÿÿ8¢îõ¢Ë0Hı—RMAJORZ
+CODE_SMELL
+x	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(é©ö Hô—RMINORZ
+CODE_SMELL

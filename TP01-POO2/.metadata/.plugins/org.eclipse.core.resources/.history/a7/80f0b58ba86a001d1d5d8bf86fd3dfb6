@@ -1,0 +1,7 @@
+package seguro;
+
+public class Registro {
+	private Pagamento pagamento;
+	private LocalDate dataPagamento;
+	
+}

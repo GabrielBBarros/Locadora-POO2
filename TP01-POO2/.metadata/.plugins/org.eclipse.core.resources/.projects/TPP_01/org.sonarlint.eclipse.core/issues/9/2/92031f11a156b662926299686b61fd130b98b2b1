@@ -1,0 +1,27 @@
+
+x	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ğÜÂ{HÊºRMINORZ
+CODE_SMELL
+i
+java:S22095"5Change this instance-reference to a static reference.(ğ£ûÊ8Šç«¦Ë0HÅºRMAJORZ
+CODE_SMELL
+„	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©ìÕ8†ùÒ°Ê0HÇºRMINORZ
+CODE_SMELL
+‰
+java:S1450"URemove the "coluna" field and declare it as a local variable in the relevant methods.(¬¨´¨8†ùÒ°Ê0HËºRMINORZ
+CODE_SMELL
+„	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æöñé8Øµ‡ıË0HÎºRMINORZ
+CODE_SMELL
+
+java:S1450"TRemove the "linha" field and declare it as a local variable in the relevant methods.(¡ùèòşÿÿÿÿ8ÊÂ¦¦Ë0HÌºRMINORZ
+CODE_SMELL
+„	java:S117["QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò×Ù“8†ùÒ°Ê0HÏºRMINORZ
+CODE_SMELL
+l
+java:S1854b"8Remove this useless assignment to local variable "pago".(…Ï‚Á8­¼ÌÿË0HÍºRMAJORZ
+CODE_SMELL
+\
+java:S30105"(Remove this assignment of "controlador".(ğ£ûÊ8Øë¦üÊ0HĞºRMAJORZ
+CODE_SMELL
+|
+java:S3252%"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İHÈºRCRITICALZ
+CODE_SMELL

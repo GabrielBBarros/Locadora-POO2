@@ -1,0 +1,15 @@
+
+]
+java:S3010>"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8Ü¼öüÊ0Hä˜RMAJORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ë·€ÄùÿÿÿÿHê˜RMINORZ
+CODE_SMELL
+h
+java:S2209."5Change this instance-reference to a static reference.(òÕœ8ª³õ¢Ë0Hæ˜RMAJORZ
+CODE_SMELL
+n
+java:S2209>"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8ıî¢Ë0Hâ˜RMAJORZ
+CODE_SMELL
+n
+java:S2209>"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8ıî¢Ë0Hè˜RMAJORZ
+CODE_SMELL

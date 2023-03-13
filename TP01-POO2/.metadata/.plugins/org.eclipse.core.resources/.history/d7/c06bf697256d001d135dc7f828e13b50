@@ -1,0 +1,297 @@
+package telas;
+
+import java.awt.BorderLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import javax.swing.border.EmptyBorder;
+
+import controlador.Controlador;
+
+import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import javax.swing.JDialog;
+
+public class Cad_Cliente extends JDialog{
+
+	private final JPanel contentPanel = new JPanel();
+	private JTextField ruaTXT;
+	private JTextField numeroTXT;
+	private JTextField bairroTXT;
+	private JTextField nomeTXT;
+	private JTextField cpfTXT;
+	private JTextField rgTXT;
+	private JTextField diaTXT;
+	private JTextField cepTXT;
+	private JTextField telefoneTXT;
+	private JTextField emailTXT;
+	private static Controlador control;
+	private JTextField mesTXT;
+	private JTextField anoTXT;
+
+
+	public static void main(String[] args) {
+		try {
+			Cad_Cliente cli = new Cad_Cliente();
+			cli.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+			cli.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public Cad_Cliente() {
+		control = Controlador.getInstancia();
+		setIconImage(Toolkit.getDefaultToolkit().getImage("src/arquivos/bandeira_brasil.jpg"));
+		setTitle("Cadastro comercial");
+		setBounds(100, 100, 640, 580);
+		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(53, 78, 81));
+		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
+		getContentPane().add(contentPanel, BorderLayout.CENTER);
+		contentPanel.setLayout(null);
+
+		
+		//-------------------------------------------------LABELS E TEXTO-------------------------------------------------//
+		//Botão - Cadastro
+		JButton botaoCadastrar = new JButton("Cadastrar");
+		botaoCadastrar.setBounds(465, 495, 132, 32);
+		botaoCadastrar.setBorder(null);
+		botaoCadastrar.setBackground(new Color(0,39,118));
+		botaoCadastrar.setForeground(new Color(255,223,0));
+		botaoCadastrar.setFocusPainted(false);
+		contentPanel.add(botaoCadastrar);
+
+		//Botao - Cancelar
+		JButton botaoCancelar = new JButton("Cancelar");
+		botaoCancelar.setBounds(330, 495, 132, 32);
+		botaoCancelar.setBorder(null);
+		botaoCancelar.setBackground(new Color(0,39,118));
+		botaoCancelar.setForeground(new Color(255,223,0));
+		botaoCancelar.setFocusPainted(false);
+		contentPanel.add(botaoCancelar);
+		
+		Font fonte = new Font("Serif", Font.BOLD, 15);
+
+		//Endereco - pt 1
+		JLabel ruaLabel = new JLabel("Rua");
+		ruaLabel.setFont(fonte);
+		ruaLabel.setBounds(62, 189, 200, 15);
+		ruaLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(ruaLabel);
+
+		ruaTXT = new JTextField();
+		ruaTXT.setBounds(62, 214, 200, 30);
+		ruaTXT.setColumns(10);
+		contentPanel.add(ruaTXT);
+		
+		//Endereco - pt 2
+		JLabel numeroLabel = new JLabel("Numero");
+		numeroLabel.setFont(fonte);
+		numeroLabel.setBounds(322, 189, 69, 15);
+		numeroLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(numeroLabel);
+
+		numeroTXT = new JTextField();
+		numeroTXT.setBounds(322, 214, 80, 30);
+		numeroTXT.setColumns(10);
+		contentPanel.add(numeroTXT);
+		
+		//Endereco - pt 3
+		JLabel bairroLabel = new JLabel("Bairro");
+		bairroLabel.setFont(fonte);
+		bairroLabel.setBounds(447, 189, 200, 15);
+		bairroLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(bairroLabel);
+
+		bairroTXT = new JTextField();
+		bairroTXT.setBounds(447, 214, 150, 30);
+		bairroTXT.setColumns(10);
+		contentPanel.add(bairroTXT);
+		
+		//Nome - 1 
+		JLabel areaTotalLabel = new JLabel("Nome");
+		areaTotalLabel.setFont(fonte);
+		areaTotalLabel.setBounds(62, 59, 250, 15);
+		areaTotalLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(areaTotalLabel);
+
+		nomeTXT = new JTextField();
+		nomeTXT.setBounds(62, 84, 200, 30);
+		nomeTXT.setColumns(10);
+		contentPanel.add(nomeTXT);
+		
+		//CPF - 2
+		JLabel areaConstruidaLabel = new JLabel("CPF");
+		areaConstruidaLabel.setFont(fonte);
+		areaConstruidaLabel.setBounds(322, 59, 250, 15);
+		areaConstruidaLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(areaConstruidaLabel);
+
+		cpfTXT = new JTextField();
+		cpfTXT.setBounds(322, 84, 200, 30);
+		cpfTXT.setColumns(10);
+		contentPanel.add(cpfTXT);
+		
+		//RG - 3 
+		JLabel quartosLabel = new JLabel("RG");
+		quartosLabel.setFont(fonte);
+		quartosLabel.setBounds(62, 124, 250, 15);
+		quartosLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(quartosLabel);
+
+		rgTXT = new JTextField();
+		rgTXT.setBounds(62, 149, 200, 30);
+		rgTXT.setColumns(10);
+		contentPanel.add(rgTXT);
+		
+		//Data de nascimento - 4 
+		JLabel banheiroLabel = new JLabel("Dia");
+		banheiroLabel.setFont(fonte);
+		banheiroLabel.setBounds(322, 124, 30, 15);
+		banheiroLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(banheiroLabel);
+
+		diaTXT = new JTextField();
+		diaTXT.setBounds(322, 149, 50, 30);
+		diaTXT.setColumns(10);
+		contentPanel.add(diaTXT);
+		
+		//CEP - 5
+		JLabel vagasLabel = new JLabel("CEP");
+		vagasLabel.setFont(fonte);
+		vagasLabel.setBounds(62, 254, 250, 15);
+		vagasLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(vagasLabel);
+
+		cepTXT = new JTextField();
+		cepTXT.setBounds(62, 279, 200, 30);
+		cepTXT.setColumns(10);
+		contentPanel.add(cepTXT);
+		
+		//Telefone - 6
+		JLabel vendaLabel = new JLabel("Telefone");
+		vendaLabel.setFont(fonte);
+		vendaLabel.setBounds(322, 254, 250, 15);
+		vendaLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(vendaLabel);
+
+		telefoneTXT = new JTextField();
+		telefoneTXT.setBounds(322, 279, 200, 30);
+		telefoneTXT.setColumns(10);
+		contentPanel.add(telefoneTXT);
+		
+		//Email - 7
+		JLabel aluguelLabel = new JLabel("E-mail");
+		aluguelLabel.setFont(fonte);
+		aluguelLabel.setBounds(62, 324, 250, 15);
+		aluguelLabel.setForeground(new Color(255, 255, 255));
+		contentPanel.add(aluguelLabel);
+
+		emailTXT = new JTextField();
+		emailTXT.setBounds(62, 349, 200, 30);
+		emailTXT.setColumns(10);
+		contentPanel.add(emailTXT);
+		
+		JLabel erroSucesso = new JLabel();
+		erroSucesso.setFont(fonte);
+		erroSucesso.setBounds(330, 475, 500, 15);
+		erroSucesso.setForeground(new Color(255, 255, 255));
+		contentPanel.add(erroSucesso);
+		
+		JLabel lblMs = new JLabel("Mês");
+		lblMs.setForeground(Color.WHITE);
+		lblMs.setFont(new Font("Serif", Font.BOLD, 15));
+		lblMs.setBounds(392, 124, 30, 15);
+		contentPanel.add(lblMs);
+		
+		mesTXT = new JTextField();
+		mesTXT.setColumns(10);
+		mesTXT.setBounds(392, 149, 50, 30);
+		contentPanel.add(mesTXT);
+		
+		JLabel lblAno = new JLabel("Ano");
+		lblAno.setForeground(Color.WHITE);
+		lblAno.setFont(new Font("Serif", Font.BOLD, 15));
+		lblAno.setBounds(465, 124, 30, 15);
+		contentPanel.add(lblAno);
+		
+		anoTXT = new JTextField();
+		anoTXT.setColumns(10);
+		anoTXT.setBounds(465, 149, 50, 30);
+		contentPanel.add(anoTXT);
+		
+		
+		//-------------------------------------------------FIM LABELS E TEXTO-------------------------------------------------//
+		
+		botaoCadastrar.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				try {
+					ArrayList<String> str = new ArrayList<>();
+					
+					
+					
+					
+					str.add(nomeTXT.getText().trim());
+					str.add(cpfTXT.getText().trim());
+					str.add(rgTXT.getText().trim());
+					String aux = anoTXT.getText().trim() + "-"+ mesTXT.getText().trim()+ "-"+ diaTXT.getText().trim();
+					LocalDate datadenascimento = LocalDate.parse(aux);
+					String endereco = ruaTXT.getText().trim() + "," + numeroTXT.getText().trim() + ". " + bairroTXT.getText().trim();
+					str.add(endereco);
+					str.add(cepTXT.getText().trim());
+					str.add(telefoneTXT.getText().trim());
+					str.add(emailTXT.getText().trim());
+					LocalDate dataCadastro = LocalDate.now();
+					
+					
+					if(control.cadastroCliente(str, datadenascimento, dataCadastro)) {
+						control.salvarClientes();
+						clearTXT();
+						erroSucesso.setText("<html><center>Comercio cadastrada com Sucesso!!!</center></html>");
+					}
+					else {
+						erroSucesso.setText("<html><center>Comercio não cadastrada. Erro ocorreu!!!</center></html>");
+					}
+				} catch (Exception e2) {
+					erroSucesso.setText("<html><center>Comercio não cadastrada. Erro ocorreu!!!</center></html>");
+					e2.printStackTrace();
+				}
+				
+			}
+			
+			
+		});
+		
+	}
+	
+	
+	
+	public void clearTXT() {
+		
+		nomeTXT.setText("");
+		cpfTXT.setText("");
+		rgTXT.setText("");
+		diaTXT.setText("");
+		mesTXT.setText("");
+		anoTXT.setText("");
+		ruaTXT.setText("");
+		numeroTXT.setText("");
+		bairroTXT.setText("");
+		cepTXT.setText("");
+		telefoneTXT.setText("");
+		emailTXT.setText("");
+
+	}
+	
+	
+}

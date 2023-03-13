@@ -1,0 +1,18 @@
+
+y	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÓÈÛĞHÏ•RMINORZ
+CODE_SMELL
+n
+java:S2209A"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8Ä°Ó¢Ë0HÍ•RMAJORZ
+CODE_SMELL
+n
+java:S2209A"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8Ä°Ó¢Ë0HÒ•RMAJORZ
+CODE_SMELL
+|
+java:S1192V"FDefine a constant instead of duplicating this literal "Serif" 3 times.(¡€¡Z8ª¦´¡Ë0HÉ•RCRITICALZ
+CODE_SMELL
+i
+java:S22091"5Change this instance-reference to a static reference.(­¾û”8ê£Ë0HĞ•RMAJORZ
+CODE_SMELL
+]
+java:S3010A"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8ª¦´¡Ë0HÔ•RMAJORZ
+CODE_SMELL

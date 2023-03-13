@@ -1,0 +1,191 @@
+
+‚
+java:S2095_"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(«ş‹èşÿÿÿÿ8‹³ÌÊÅ0HëÆRBLOCKERZBUG
+„
+java:S2095`"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8ÿ²£†Ë0HÍÆRBLOCKERZBUG
+ƒ
+java:S2095B"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8ÿ²£†Ë0H’ÆRBLOCKERZBUG
+{
+java:S1126­"AReplace this if-then-else statement by a single return statement.(©­‹˜øÿÿÿÿ8¯‡ÉüË0H«ÆRMINORZ
+CODE_SMELL
+ª
+java:S1319µ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÉºÅóşÿÿÿÿ8«‰“Ì0H¶ÆRMINORZ
+CODE_SMELL
+|
+java:S2095G"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(„Şßƒ8‹³ÌÊÅ0H²ÆRBLOCKERZBUG
+¥
+java:S1319à"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÈŒ»¡8‚ãåòË0HÆRMINORZ
+CODE_SMELL
+ƒ
+java:S2095T"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8ÿ²£†Ë0H”ÆRBLOCKERZBUG
+l
+java:S1854"7Remove this useless assignment to local variable "cli".(¦ÄëĞ8¾ÅÄƒÌ0HˆÆRMAJORZ
+CODE_SMELL
+
+java:S1319½"cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(´Ù¹¢üÿÿÿÿ8‚ãåòË0H„ÆRMINORZ
+CODE_SMELL
+]
+java:S1481Ÿ"(Remove this unused "cor" local variable.(­ı±ø8‚”ÇƒÌ0H‰ÆRMINORZ
+CODE_SMELL
+œ
+java:S1319ò"bThe type of "in" should be an interface such as "List" rather than the implementation "ArrayList".(òú‹şÿÿÿÿ8‚ãåòË0H³ÆRMINORZ
+CODE_SMELL
+V
+java:S1116¨"Remove this empty statement.(Úóõ—üÿÿÿÿ8Ù—ºƒÌ0H»ÆRMINORZ
+CODE_SMELL
+¥
+java:S1319İ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¯Ê8«‰“Ì0HØÆRMINORZ
+CODE_SMELL
+¥
+java:S1319Á"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ºÊØØ8«‰“Ì0HÚÆRMINORZ
+CODE_SMELL
+…
+java:S2095‡"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8‚ãåòË0HµÆRBLOCKERZBUG
+ƒ
+java:S2095H"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8ÿ²£†Ë0HæÆRBLOCKERZBUG
+…
+java:S2095¡"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8ÚÑåòË0HàÆRBLOCKERZBUG
+m	java:S106Ô"9Replace this use of System.out or System.err by a logger.(Åœ×É8¶ëóË0H†ÆRMAJORZ
+CODE_SMELL
+{
+java:S2095S"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(×™¦f8åúÌ0HÕÆRBLOCKERZBUG
+œ
+java:S1319Ş"bThe type of "fl" should be an interface such as "List" rather than the implementation "ArrayList".(¨¢æøÿÿÿÿ8‚ãåòË0HÜÆRMINORZ
+CODE_SMELL
+ª
+java:S1319¸"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‹üœøÿÿÿÿ8«‰“Ì0HüÅRMINORZ
+CODE_SMELL
+ª
+java:S1319±"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ˆÀÛõúÿÿÿÿ8«‰“Ì0H­ÆRMINORZ
+CODE_SMELL
+œ
+java:S1319Ş"bThe type of "in" should be an interface such as "List" rather than the implementation "ArrayList".(¨¢æøÿÿÿÿ8‚ãåòË0HéÆRMINORZ
+CODE_SMELL
+k
+java:S1854 "7Remove this useless assignment to local variable "imo".(×¶ÏA8‚”ÇƒÌ0H›ÆRMAJORZ
+CODE_SMELL
+ª
+java:S1319Ë"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(™ÉÙàşÿÿÿÿ8ÄÄ·ÿË0HŞÆRMINORZ
+CODE_SMELL
+g
+java:S1481¦"-Remove this unused "corretor" local variable.(Ùè ÿÿÿÿÿ8Ù—ºƒÌ0HáÆRMINORZ
+CODE_SMELL
+–
+java:S1319é"aThe type of "f" should be an interface such as "List" rather than the implementation "ArrayList".(õ¤ŒÄ8‚ãåòË0HÀÆRMINORZ
+CODE_SMELL
+¥
+java:S1319É"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ßÑó¡8«‰“Ì0H¥ÆRMINORZ
+CODE_SMELL
+„
+java:S2095m"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8ÿ²£†Ë0H±ÆRBLOCKERZBUG
+\
+java:S1481 "(Remove this unused "imo" local variable.(×¶ÏA8‚”ÇƒÌ0H¯ÆRMINORZ
+CODE_SMELL
+¼
+java:S2681©"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(›ûä·8´ÆºƒÌ0HšÆRMAJORZ
+CODE_SMELL
+|
+java:S2095;"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(®ù¢8‹³ÌÊÅ0H‡ÆRBLOCKERZBUG
+~
+java:S20956"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(¢Ë¿Ÿ8ÿ²£†Ë0HƒÆRBLOCKERZBUG
+¤
+java:S1319Á"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ØòÔ.8«‰“Ì0HŒÆRMINORZ
+CODE_SMELL
+ª
+java:S1319ë"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(“‡€³ıÿÿÿÿ8¬ÒëÌ0H€ÆRMINORZ
+CODE_SMELL
+
+java:S1319Ğ"cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(²„½ÿÿÿÿÿÿ8‚ãåòË0H¾ÆRMINORZ
+CODE_SMELL
+
+java:S20955"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ì’ÿÿÿÿÿÿ8‹³ÌÊÅ0HºÆRBLOCKERZBUG
+c
+java:S1751©"5Remove this "break" statement or make it conditional.(›ûä·8´ÆºƒÌ0H¬ÆRMAJORZBUG
+l
+java:S1854Ÿ"7Remove this useless assignment to local variable "cor".(­ı±ø8‚”ÇƒÌ0H½ÆRMAJORZ
+CODE_SMELL
+£
+java:S1319Ó"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ãı8«‰“Ì0HçÆRMINORZ
+CODE_SMELL
+ª
+java:S1319Õ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Šııßúÿÿÿÿ8«‰“Ì0HâÆRMINORZ
+CODE_SMELL
+~
+java:S2095†"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(Ö³¤8äã±¢Ë0H‹ÆRBLOCKERZBUG
+…
+java:S2095”"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8Ñ¯³¢Ë0HÄÆRBLOCKERZBUG
+ƒ
+java:S2095<"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8ÿ²£†Ë0HÿÅRBLOCKERZBUG
+¤
+java:S1319­"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(²®@8«‰“Ì0H©ÆRMINORZ
+CODE_SMELL
+ª
+java:S1319÷"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Œ²Æ›ûÿÿÿÿ8«‰“Ì0H¸ÆRMINORZ
+CODE_SMELL
+]
+java:S3010")Remove this assignment of "configuracao".(¥Û›š8¥±ôËÅ0H ÆRMAJORZ
+CODE_SMELL
+‚
+java:S2095l"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(²Ä¶ìøÿÿÿÿ8¨“­¢Ë0H•ÆRBLOCKERZBUG
+]
+java:S1481"(Remove this unused "cli" local variable.(¦ÄëĞ8‚”ÇƒÌ0HÑÆRMINORZ
+CODE_SMELL
+˜
+java:S1319Ç"cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(Ïú´¶8‚ãåòË0HÂÆRMINORZ
+CODE_SMELL
+a
+java:S1172›",Remove this unused method parameter "valor".(ğ¨æ8ÃºÃƒÌ0H–ÆRMAJORZ
+CODE_SMELL
+¥
+java:S1319©"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¨ÔÙ8ĞôìúË0H§ÆRMINORZ
+CODE_SMELL
+¥
+java:S1319Õ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Î¸8«‰“Ì0H˜ÆRMINORZ
+CODE_SMELL
+ª
+java:S1319ö"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ï˜ùÿÿÿÿ8«‰“Ì0HÅÆRMINORZ
+CODE_SMELL
+—
+java:S1319é"bThe type of "in" should be an interface such as "List" rather than the implementation "ArrayList".(õ¤ŒÄ8‚ãåòË0HËÆRMINORZ
+CODE_SMELL
+ƒ
+java:S2095N"OUse try-with-resources or close this "ObjectInputStream" in a "finally" clause.(±î¢”ûÿÿÿÿ8åúÌ0HÎÆRBLOCKERZBUG
+‚
+java:S2095y"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ÖùÚ‘úÿÿÿÿ8­î¯¢Ë0H¤ÆRBLOCKERZBUG
+
+java:S2095M"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¼³ìşÿÿÿÿ8‹³ÌÊÅ0HäÆRBLOCKERZBUG
+~
+java:S2095“"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(›ß’Ğ8ÚÑåòË0H‚ÆRBLOCKERZBUG
+ª
+java:S1319Ë"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ïÏ„ãıÿÿÿÿ8ĞôìúË0HÆRMINORZ
+CODE_SMELL
+ª
+java:S1319‹"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ìäÈ…ùÿÿÿÿ8«‰“Ì0HÇÆRMINORZ
+CODE_SMELL
+ª
+java:S1319½"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(şé€ìùÿÿÿÿ8«‰“Ì0HÏÆRMINORZ
+CODE_SMELL
+›
+java:S1319ò"aThe type of "f" should be an interface such as "List" rather than the implementation "ArrayList".(òú‹şÿÿÿÿ8‚ãåòË0HÖÆRMINORZ
+CODE_SMELL
+ª
+java:S1319‚"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(´­øÒøÿÿÿÿ8«‰“Ì0HœÆRMINORZ
+CODE_SMELL
+¤
+java:S1319¹"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(æÀğ8«‰“Ì0HÉÆRMINORZ
+CODE_SMELL
+¥
+java:S1319®"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(â²×·8ĞôìúË0H‡ÇRMINORZ
+CODE_SMELL
+ƒ
+java:S2095 "NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(¨äİ¸øÿÿÿÿ8öà°¢Ë0HşÅRBLOCKERZBUG
+¥
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(šà—Ö8«‰“Ì0H¢ÆRMINORZ
+CODE_SMELL
+
+java:S2095A"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¦×á›ÿÿÿÿÿ8›·‰‡Ë0H“ÆRBLOCKERZBUG
+£
+java:S1319ü"nThe type of "formaPagamento" should be an interface such as "List" rather than the implementation "ArrayList".(øş³Ø8‚ãåòË0HÆRMINORZ
+CODE_SMELL
+„
+java:S2095z"PUse try-with-resources or close this "ObjectOutputStream" in a "finally" clause.(ß¿…ùÿÿÿÿ8¨“­¢Ë0HåÆRBLOCKERZBUG

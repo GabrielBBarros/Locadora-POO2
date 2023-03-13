@@ -1,0 +1,34 @@
+package usuario;
+
+import java.io.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+public class Cliente extends Usuario implements Serializable  {
+	
+	protected LocalDate dataCadastro;
+
+	public Cliente() {
+	}
+
+	public Cliente(String codigoUsuario, LocalDate datadenascimento, LocalDate dataCadastro, ArrayList<String> str) {
+		super(codigoUsuario, , cpf, rg, datadenascimento, endereco, cep, telefone, email);
+		this.dataCadastro = dataCadastro;
+	}
+
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(LocalDate dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [dataCadastro=" + dataCadastro + "]";
+	}
+	
+	
+
+}

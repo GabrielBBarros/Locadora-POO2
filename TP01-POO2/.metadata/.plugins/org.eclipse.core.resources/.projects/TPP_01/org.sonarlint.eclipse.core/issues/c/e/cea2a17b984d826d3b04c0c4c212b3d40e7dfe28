@@ -1,0 +1,21 @@
+
+t
+java:S1161î":Add the "@Override" annotation above this method signature(Ä Ïúüÿÿÿÿ8ˆš¾‹Ë0Hÿ˜RMAJORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€€‡úÿÿÿÿHƒ™RMINORZ
+CODE_SMELL
+n
+java:S2209?"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8ƒ â¢Ë0H™RMAJORZ
+CODE_SMELL
+n
+java:S2209?"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8ƒ â¢Ë0Hû˜RMAJORZ
+CODE_SMELL
+|
+java:S1192T"FDefine a constant instead of duplicating this literal "Serif" 3 times.(¡€¡Z8ˆš¾‹Ë0H„™RCRITICALZ
+CODE_SMELL
+]
+java:S3010?"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8ˆš¾‹Ë0Hù˜RMAJORZ
+CODE_SMELL
+n
+java:S2209."5Change this instance-reference to a static reference.(Ó¸ô­ıÿÿÿÿ8¶Ÿö¢Ë0Hı˜RMAJORZ
+CODE_SMELL

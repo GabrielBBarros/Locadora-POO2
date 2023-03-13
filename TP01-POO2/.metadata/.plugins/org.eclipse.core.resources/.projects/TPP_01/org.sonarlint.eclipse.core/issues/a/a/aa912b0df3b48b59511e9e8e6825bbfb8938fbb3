@@ -1,0 +1,100 @@
+
+œ
+java:S1319¸"bThe type of "in" should be an interface such as "List" rather than the implementation "ArrayList".(ë— âıÿÿÿÿ8ÙÄŠÊ0Hã»RMINORZ
+CODE_SMELL
+
+java:S1319˜"cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(×û¿üÿÿÿÿ8ìå¡‡Ê0Hæ»RMINORZ
+CODE_SMELL
+¥
+java:S1319Ş"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ßÑó¡8‰ó¼ŠÊ0Hé»RMINORZ
+CODE_SMELL
+¥
+java:S1319æ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¨ÔÙ8©ıû°Ê0Hì»RMINORZ
+CODE_SMELL
+¥
+java:S1319ú"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(â²×·8Õ¡Ë0Hï»RMINORZ
+CODE_SMELL
+¥
+java:S1319ê"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(€¯Ê8Ä‡ÏŒÊ0Hò»RMINORZ
+CODE_SMELL
+ª
+java:S1319ª"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(şé€ìùÿÿÿÿ8Ô¿©ªË0Hõ»RMINORZ
+CODE_SMELL
+¥
+java:S1319ò"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(šà—Ö8Õô”Ê0Hø»RMINORZ
+CODE_SMELL
+¥
+java:S1319®"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ºÊØØ8® ¬ŠÊ0Hû»RMINORZ
+CODE_SMELL
+˜
+java:S1319 "cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(á·Ì¯8çı£ˆÊ0Hş»RMINORZ
+CODE_SMELL
+¥
+java:S1319ş"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ø‰õˆ8Ğ¼íŒÊ0H¼RMINORZ
+CODE_SMELL
+ª
+java:S1319¶"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‘—ã™ÿÿÿÿÿ8êŒ¨¡Ë0H„¼RMINORZ
+CODE_SMELL
+¥
+java:S1319†"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Î¸8ËƒµŠÊ0H‡¼RMINORZ
+CODE_SMELL
+ª
+java:S1319’"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ï˜ùÿÿÿÿ8”ö¦¡Ë0HŠ¼RMINORZ
+CODE_SMELL
+—
+java:S1319¨"bThe type of "fl" should be an interface such as "List" rather than the implementation "ArrayList".(—¹¡à8šı‰Ê0H¼RMINORZ
+CODE_SMELL
+—
+java:S1319°"bThe type of "fl" should be an interface such as "List" rather than the implementation "ArrayList".(Œù’®8ÙÄŠÊ0H¼RMINORZ
+CODE_SMELL
+ª
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¤‘…Œüÿÿÿÿ8‰ó¼ŠÊ0H“¼RMINORZ
+CODE_SMELL
+£
+java:S1319â"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ãı8‰ó¼ŠÊ0H–¼RMINORZ
+CODE_SMELL
+¤
+java:S1319Š"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÓÍ®X8êŒ¨¡Ë0H™¼RMINORZ
+CODE_SMELL
+
+java:S1319Ú"cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(´Ù¹¢üÿÿÿÿ8‰ó¼ŠÊ0Hœ¼RMINORZ
+CODE_SMELL
+£
+java:S1319Á"nThe type of "formaPagamento" should be an interface such as "List" rather than the implementation "ArrayList".(øş³Ø8©’Ú¥Ë0HŸ¼RMINORZ
+CODE_SMELL
+—
+java:S1319°"bThe type of "in" should be an interface such as "List" rather than the implementation "ArrayList".(Œù’®8õºş‰Ê0H¢¼RMINORZ
+CODE_SMELL
+¤
+java:S1319–"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(²®@8ñÛø Ë0H¥¼RMINORZ
+CODE_SMELL
+œ
+java:S1319¸"bThe type of "fl" should be an interface such as "List" rather than the implementation "ArrayList".(ë— âıÿÿÿÿ8õºş‰Ê0H¨¼RMINORZ
+CODE_SMELL
+ª
+java:S1319î"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Œ²Æ›ûÿÿÿÿ8‰ó¼ŠÊ0H«¼RMINORZ
+CODE_SMELL
+ª
+java:S1319¢"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÉºÅóşÿÿÿÿ8‚ÛˆÊ0H®¼RMINORZ
+CODE_SMELL
+ª
+java:S1319²"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(™ÉÙàşÿÿÿÿ8ÿ¤»ªË0H±¼RMINORZ
+CODE_SMELL
+a
+java:S3010"(Remove this assignment of "imobiliaria".(¦ÈÌúÿÿÿÿ8İÆ€ÌÅ0H´¼RMAJORZ
+CODE_SMELL
+ª
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ˆÀÛõúÿÿÿÿ8¬½’¡Ë0H¶¼RMINORZ
+CODE_SMELL
+ª
+java:S1319ö"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÆÊéèùÿÿÿÿ8Ñæù°Ê0H¹¼RMINORZ
+CODE_SMELL
+ª
+java:S1319‚"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(é™Üûÿÿÿÿ8©ıû°Ê0H¼¼RMINORZ
+CODE_SMELL
+¤
+java:S1319¦"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(æÀğ8ºÄü Ë0H¿¼RMINORZ
+CODE_SMELL
+—
+java:S1319¨"bThe type of "in" should be an interface such as "List" rather than the implementation "ArrayList".(—¹¡à8šı‰Ê0HÂ¼RMINORZ
+CODE_SMELL

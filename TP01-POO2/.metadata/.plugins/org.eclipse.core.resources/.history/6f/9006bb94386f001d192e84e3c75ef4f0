@@ -1,0 +1,67 @@
+package usuario;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import controle.*;
+import imovel.*;
+import seguro.*;
+
+public class cadastro {
+
+	public static void main(String[] args) {
+		ArrayList<String> str = new ArrayList<>();
+		LocalDate cadastro = LocalDate.now();
+		LocalDate data;
+		ArrayList<Usuario> clientes = new ArrayList<>();
+		ArrayList<Usuario> corretores = new ArrayList<>();
+		ArrayList<Aluguel> alugueis = new ArrayList<>();
+		ArrayList<Venda> vendas = new ArrayList<>();
+		ArrayList<Imovel> imoveis = new ArrayList<>();
+		ArrayList<Seguro> seguros = new ArrayList<>();
+		Configuracao configuracao = Configuracao.getInstancia();
+		try {
+			FileInputStream inn = new FileInputStream(configuracao.getArquivoCliente());
+			ObjectInputStream obj = new ObjectInputStream(inn);
+			clientes = (ArrayList<Usuario>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoCorretores());
+			obj = new ObjectInputStream(inn);
+			corretores = (ArrayList<Usuario>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoImoveis());
+			obj = new ObjectInputStream(inn);
+			imoveis = (ArrayList<Imovel>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoVendas());
+			obj = new ObjectInputStream(inn);
+			vendas = (ArrayList<Venda>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+			inn = new FileInputStream(configuracao.getArquivoSeguros());
+			obj = new ObjectInputStream(inn);
+			seguros = (ArrayList<Seguro>) obj.readObject();
+			obj.close();
+			inn.close();
+			
+		} catch (IOException|ClassNotFoundException e2) {
+		}	
+		
+		//Aluguel(String CodigoAluguel, Usuario cliente, Usuario corretor, Imovel imovel, LocalDate dataInicioAluguel, LocalDate dataDevolucao, LocalDate dataPagamentoMensal)
+		LocalDate diapaga;
+		Aluguel alu = new Aluguel("AL000",clientes.get(7), corretores.get(0), imoveis.get(9), data, data, data)
+	}
+}

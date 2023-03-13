@@ -1,0 +1,21 @@
+
+n
+java:S22093"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8İ©†¨Ë0HÍ™RMAJORZ
+CODE_SMELL
+|
+java:S3252$"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İHÑ™RCRITICALZ
+CODE_SMELL
+]
+java:S30103"$Remove this assignment of "control".(šä™Âøÿÿÿÿ8İ©†¨Ë0HÓ™RMAJORZ
+CODE_SMELL
+d
+java:S1068"+Remove this unused "control" private field.(‡îÍÿüÿÿÿÿ8ÈÈ‚¨Ë0HÏ™RMAJORZ
+CODE_SMELL
+n
+java:S22093"5Change this instance-reference to a static reference.(šä™Âøÿÿÿÿ8İ©†¨Ë0HÉ™RMAJORZ
+CODE_SMELL
+t
+java:S1161ƒ":Add the "@Override" annotation above this method signature(Ä Ïúüÿÿÿÿ8ë‰˜¨Ë0HË™RMAJORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ª×©°ûÿÿÿÿHÕ™RMINORZ
+CODE_SMELL

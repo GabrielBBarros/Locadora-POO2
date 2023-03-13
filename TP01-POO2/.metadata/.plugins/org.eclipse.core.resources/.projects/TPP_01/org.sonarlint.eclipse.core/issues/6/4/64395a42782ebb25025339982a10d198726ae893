@@ -1,0 +1,20 @@
+
+œ
+java:S1319S"cThe type of "str" should be an interface such as "List" rather than the implementation "ArrayList".(£ı®×úÿÿÿÿ8ó‰º‰Ê0HêÈRMINORZ
+CODE_SMELL
+¦
+java:S1319»"rThe type of "segurosContratados" should be an interface such as "List" rather than the implementation "ArrayList".(÷ß¢Z8¹¢üÆÅ0HíÈRMINORZ
+CODE_SMELL
+‡	java:S116"ORename this field "Pago" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÂÂâ‡ÿÿÿÿÿ8¹¢üÆÅ0HğÈRMINORZ
+CODE_SMELL
+u
+java:S1126K"AReplace this if-then-else statement by a single return statement.(òû£8¹¢üÆÅ0HñÈRMINORZ
+CODE_SMELL
+‰	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•†É§şÿÿÿÿ8¹¢üÆÅ0HòÈRMINORZ
+CODE_SMELL
+ª
+java:S1319³"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(°…·¼úÿÿÿÿ8¹¢üÆÅ0HóÈRMINORZ
+CODE_SMELL
+¥
+java:S1319·"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(œëÓ¬8ø˜‰Ê0HöÈRMINORZ
+CODE_SMELL

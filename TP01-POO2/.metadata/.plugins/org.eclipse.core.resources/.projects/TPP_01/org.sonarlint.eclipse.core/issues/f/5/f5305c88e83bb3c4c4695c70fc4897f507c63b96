@@ -1,0 +1,20 @@
+
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¿¼ıÔøÿÿÿÿHåİRMINORZ
+CODE_SMELL
+
+java:S1450"TRemove the "linha" field and declare it as a local variable in the relevant methods.(¡ùèòşÿÿÿÿ8»³«ªË0HàİRMINORZ
+CODE_SMELL
+ƒ
+java:S3252'"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İ8»³«ªË0HãİRCRITICALZ
+CODE_SMELL
+\
+java:S30107"(Remove this assignment of "controlador".(ğ£ûÊ8»³«ªË0HáİRMAJORZ
+CODE_SMELL
+‰
+java:S1450"URemove the "coluna" field and declare it as a local variable in the relevant methods.(¬¨´¨8»³«ªË0HÜİRMINORZ
+CODE_SMELL
+„	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜Ç†Ş8»³«ªË0HßİRMINORZ
+CODE_SMELL
+i
+java:S22097"5Change this instance-reference to a static reference.(ğ£ûÊ8¥…ÔªË0HİİRMAJORZ
+CODE_SMELL

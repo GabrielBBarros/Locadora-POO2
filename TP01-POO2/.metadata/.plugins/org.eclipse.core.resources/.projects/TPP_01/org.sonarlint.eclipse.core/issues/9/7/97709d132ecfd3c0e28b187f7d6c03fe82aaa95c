@@ -1,0 +1,24 @@
+
+„	java:S117Z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·£½²8ÌÀæüÊ0H½ŞRMINORZ
+CODE_SMELL
+~	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ï˜“ÀıÿÿÿÿH´ŞRMINORZ
+CODE_SMELL
+‰
+java:S1450"URemove the "coluna" field and declare it as a local variable in the relevant methods.(¬¨´¨8•ÎÛ°Ê0H³ŞRMINORZ
+CODE_SMELL
+
+java:S1450"TRemove the "linha" field and declare it as a local variable in the relevant methods.(¡ùèòşÿÿÿÿ8•ÎÛ°Ê0H²ŞRMINORZ
+CODE_SMELL
+‰	java:S117b"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó™ôÓüÿÿÿÿ8ÌÀæüÊ0HºŞRMINORZ
+CODE_SMELL
+|
+java:S3252&"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".(Ì—İHµŞRCRITICALZ
+CODE_SMELL
+\
+java:S30106"(Remove this assignment of "controlador".(ğ£ûÊ8ŞË¤üÊ0H¸ŞRMAJORZ
+CODE_SMELL
+i
+java:S22096"5Change this instance-reference to a static reference.(ğ£ûÊ8“Æ¦Ë0H»ŞRMAJORZ
+CODE_SMELL
+„	java:S117^"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”¡Œº8ÌÀæüÊ0H·ŞRMINORZ
+CODE_SMELL
